@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link a Css-->
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Formar Parte</title>
+</head>
+<body>
+    <header>
+        
+        <!--Logo-->
+        <div class="logo">
+            <img src="../img/LogoColor.jpeg" alt="">
+        </div>
+   
+       <!--MENU-->
+           <div>       
+               <nav class="menu">
+                   <ul>
+                       <li>
+                           <a href="../index.html">HOME</a>
+                       </li>
+                       <li>
+                          <a href="multimedia.html">MULTIMEDIA</a>
+                       </li>
+                       <li>
+                          <a href="recursos.html">RECURSOS</a>
+                       </li>
+                       <li>
+                            <a href="ministerios.html">MINISTERIOS</a>
+                       </li>
+                       <li class="active">
+                          <a href="formarParte.html">FORMAR PARTE</a>
+                       </li>
+                   </ul>
+               </nav>
+           </div>
+
+        <!--Icono Redes Sociales-->
+        <div class="RedesSociales">
+            <img src="../img/redesSociales/facebook.png" alt="">
+            <img src="../img/redesSociales/instagram.png" alt="">
+            <img src="../img/redesSociales/whatsapp.png" alt="">
+        </div>
+
+        <!--Loggin-->
+        <div class="Loggin">
+            <img class="Loggin__icono" src="../img/Loggin.png" alt="">
+            <a class="Loggin__text" href="">Loggin</a>
+            <a  class="Loggin__text" href="">Registrar</a>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <h1>FORMULARIO</h1>
+
+        <form >
+            <fieldset>
+                <legend>Envia tus datos</legend>
+                <div class="form">
+                    <label for="nombre">NOMBRE</label>
+                    <input type="text" name="nombre" placeholder="Nombre sin apellido">
+                </div>
+                
+                <div class="form">
+                    <label for="apellido">APELLIDO</label>
+                    <input type="text" name="apellido" placeholder="apellido">
+                </div>
+
+                <div class="form">
+                    <label for="email">EMAIL</label>
+                    <input type="email" name="email" placeholder="tuemail@gmail.com">
+                </div>
+
+                <div class="form">
+                    <label for="telefono">TELEFONO</label>
+                    <input type="number" name="telefono" placeholder="0297505646">
+                </div>
+
+                <div class="form">
+                    <label for="pais">PAIS</label>
+                    <select name="pais" id="">
+                        <option value="ARGENTINA">ARGENTINA</option>
+                        <option value="BRAZIL">BRAZIL</option>
+                        <option value="CHINA">CHINA</option>
+                        <option value="URUGUAY">URUGUAY</option>
+                    </select>
+                </div>
+
+                <div class="form">
+                    <input type="submit"value="Evia tus datos">
+                    <input type="reset" value="Borrar">
+                
+                </div>
+            </fieldset>
+        </form>
+
+    </main>
+
+
+    <footer>
+        <p>Copyright  , todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
