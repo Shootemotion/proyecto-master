@@ -7,347 +7,96 @@
     
 }
 
-/*Estilos de Body*/
 
 
-/*Estilos de Header - Generales*/
+
+/*GRID*/
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: 2fr 2fr 4fr 4fr 4fr 4fr 2fr 2fr;
+    grid-template-areas: 
+    "header header header header"
+    "header header header header"
+    "main main main main"
+    "main main main main"
+    "main main main main"
+    "main main main main"
+    "footer footer footer footer"
+    "footer footer footer footer";
+    gap: 1em;
+
+}
+
+
+
 header{
-    position: relative;
-    background-color: antiquewhite;
-    height: 200px;
-    
-
-    
+    background-color: chartreuse;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-areas: 
+    "logo RedesSociales LogginBuscador"
+    "logo RedesSociales LogginBuscador"
+    "BarraMenu BarraMenu BarraMenu";
+    gap: 13em;
 }
 
-.carrusel{
-    background-color: rgb(134, 134, 214);
-    position: absolute;
-    text-align: center;
-    width:100% ;
-    height: 200PX;
-
-}
-.menu{
-    background-color: rgba(121, 84, 3, 0.918);
-    padding: 10px;
-    width: 100%;
-    left: 15%;
-    display:inline-block;
-    margin-top: 200px;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-
-}
-
-
-.menu ul{
-    list-style: none;
-    background-color: aqua;
-    float:right;
-    height: 80px;
-    overflow: hidden;
-}
-
-.menu ul li{
-    color: blue;
-    float: none;
-    position: relative;
-    display: inline-block;
-    margin: 20px 10px 20px 10px;
-    
-}
-
-.menu ul li a{
-    text-decoration: none;
-    display: block;
-    font-family: 'Carter One', cursive;
-    border: solid;
-    border-radius: 10px;
-    padding: 6px;
-    margin: 10px;
-    background-color: yellow;
-   
-   
-}
-
-.menu ul li.active a{
-    text-decoration: underline double;
-}
-
-
-header .RedesSociales{
-    background-color: bisque;
-    left: 50%;
-    top: 0;
-    display: inline-block;
-    position: absolute;
-  
-}
-
-
-header .RedesSociales img{
-    display: inline-block;
-    width: 55px;
-    height: 55px;
-    margin-right: 25px;
-    gap: 100px;
-}
-
-header .logo{
-    display: inline-block;
-    margin: 10px 10px 10px 10px;
-    width: 155px;
-    height: 155px;
-    position: absolute;
-    left: 0;
-    top: 0px;
-    
-}
-
-header .logo img{
-    width: 155px;
-    height: 155px;
-    margin-top: 0px;
+.logo{
  
-}
-
-header .Loggin{
-    background-color: antiquewhite;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 240px;
-    height: 140px;
-    
-}
-
-header .Loggin__icono {
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-    width: 80px;
-    height: 80px;
-   
-}
-
-header .Loggin__text {
-    
-    display: inline-block;
-    background-color: rgb(132, 222, 110);
-
+    grid-area: logo;
 }
 
 
-/*Estilos de Main - generales*/
+
+.RedesSociales {
+
+    grid-area: RedesSociales;
+}
+
+
+
+
+.LogginBuscador {
+    grid-area: LogginBuscador;
+    gap: 20px;
+}
+
+.Loggin {
+    grid-area: Loggin;
+}
+
+.BarraMenu {
+    grid-area: BarraMenu;
+}
+
 
 main{
-    background-color: bisque;
-    display: inline-block;
-    margin-top: 10%;
-
+    background-color: blue;
+    grid-area: main;
+    display: grid;
 }
 
-h1 {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-    left: 40%;
+.bodyCompleto{ 
+display: grid;    
+grid-template-columns: 1fr 2fr;
+grid-template-rows: 1fr 1fr;
+grid-template-areas: 
+"logo RedesSociales Loggin"
+"logo RedesSociales buscador"
+"BarraMenu BarraMenu BarraMenu";
 }
-
-
-.contenido{
-    background-color: rgb(222, 148, 50);
-    top: 40px;
-    height: 400px;
-    padding: 5px;
-    margin-inline: 15px;
-    position: relative;
-    display: inline-block;
-
-
-}
-.contenido__imagen{
-    width: 20%;
-    height: 90%;
-    display: inline-block;
-    top: 20px;
-    right: 500px;
-    position:absolute ;
-   
-}
-
-.contenido__parrafo{
-    display:inline-block;
-    width: 30%;
-    top: 20px;
-    font-size:140% ;
-    margin: 150px 150px 150px;
-    text-align: left;
-}
-
-.contenido__parrafo--dos {
-        width: 30%;
-        top: 20px;
-        margin: 100px 300px 100px 100px ;
-        font-size:140% ;
-        float:right;
-        text-align: left;
-    
-}
-
-
-.contenido__video{
-    position: absolute;
-    top: 20px;
-    margin-left: 50px;
-    float:left;
-
-}
-
-h2{
-    top: 10px;
-    left: 1000px;
-    position: absolute;
-    display: inline-block;
-    margin: 10px;
-}
-
-.contenido__title--uno{
-    left: 300px;
-}
-
-
-
-
-
-/*Pagina recursos - Estilos*/
-
-.title__recursos{
-    display: block;
-    height: 900px;
-    width: 1fr;
-    top: 202px;
-   
-}
-.title__recursos--nav ul li{
-    display: inline-block;
-    text-decoration: underline;
-    margin: 60px;
-    margin-inline: 160px;
-    padding: 20px;
-    list-style: none;
-    
-}
-
-
-/*Pagina Multimedia - Estilos de nav lateral*/
-
-
-main .nav__multimedia{
-    display: inline-block;
-    top: 20px;
-    margin: 20px;
-    padding: 10px;
-    border: 3px black;
-    height: 500px;
-    width: 150px;
-}
-
-main .img__nav{
-    height: 90px;
-    width: 120px;
-}
-
-main .img__nav--dos{
-    height: 200px;
-    width: 300px;
-}
-
-.contenido__nav{
-    margin: 90px;
-    display: inline-block;
-    right: 0;
-}
-
-
-
-
-/*Pagina Ministerio - Estilos de nav lateral - Pagina Multimedia*/
-
-
-.contenidoMinisterio{
-    height: 1000px;
-    width:2000px;
-}
-
-
-
-.contenido__ministerio {
-    display: inline-block;
-    background-color: aquamarine;
-    margin: 5px;
-    height: 90%;
-    width: 20%;
-}
-
-
-.contenido__ministerio--img{
-    background-color: rgb(243, 181, 106);
-    margin: 5px;
-    height: 30%;
-}
-
-.contenido__ministerio--text{
-    background-color: rgb(243, 145, 25);
-    margin: 5px;
-    height: 30%;
-}
-
-.contenido__ministerio--list{
-    background-color: rgb(151, 96, 29);
-    margin: 5px;
-    height: 30%;
-}
-
-.imgCarga{
-    
-    margin: 10%;
-    height: 80%;
-    width: 80%;
-}
-
-
-/*Estilos de FORMULARIO*/
-
-
-form{
-    top: 30px;
-    left: 503px;
-    background-color: azure;
-    height: 500px;
-    width: 900px;
-}
-
-fieldset{
-    padding: 10px;
-    height: 90%;
-}
-
-
-
-.form{
-    padding: 20px;
-    margin: 20px;
-}
-
-/*Estilos de Footer*/
 footer{
-    background-color: rgba(0, 0, 0, 0.754);
-    position: static;
-    height: 40px;
-    bottom: 0;
-    text-align: center;
+    background-color: aqua;
+    grid-area: footer;
+}
+
+/*estilos del Nav*/
+
+nav ul{
+    display: flex;
+
 }
