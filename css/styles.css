@@ -1,0 +1,33 @@
+
+@media screen and (min-width: 768px){
+    .body{
+        background-color: #000000;
+    }
+}
+
+/*reset*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/*la tipografia tiene un valor de 16px o igual a 1rem*/
+
+p{
+    font-size: 2rem;
+}
+
+
+.contenedor{
+font-size: 16px;
+}
+
+/*la tipografia con valor em significa que toma como base el valor del padre mas cercano, en este caso, Contenedor tiene definido 20px y 1 em valdria en el hijo 20 px*/
+
+.hijo{
+background-color: tomato;
+font-size: 2em;
+}
