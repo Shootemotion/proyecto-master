@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Comfortaa:wght@300&family=Roboto:wght@100;300;400&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <!--Link a CSS Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!--Link a Icono de Pagina-->
     <link rel="shortcut icon" href="img/LogoByN.jpeg" type="image/x-icon">
     <!--Link a Css-->
@@ -17,20 +19,19 @@
 
 <body>
 
-    <div class="container">
+    <div class="container1">
         <!--H E A D E R -->
          <header>
 
 
                     <!--Logo-->
                     <div class="logo">
-                        <img src="img/LogoColor.jpeg" alt="">
+                       <a href="index.html"> <img src="img/LOGO/Logo .png" alt=""></a>
                     </div>
 
                     <!--MENU-->  
-                    
-                    <div class="BarraMenu">
-                        <nav class="menu">
+                 
+                        <nav class="BarraMenu">
                             <ul>
                                 <li class="active">
                                     <a href="index.html">HOME</a>
@@ -49,16 +50,14 @@
                                 </li>
                             </ul>
                         </nav>
-                    </div>
-
-               
+           
 
                 
                     <!--Icono Redes Sociales -->
                     <div class="RedesSociales">
-                        <img src="img/redesSociales/facebook.png" alt="">
-                        <img src="img/redesSociales/instagram.png" alt="">
-                        <img src="img/redesSociales/whatsapp.png" alt="">
+                        <a href="https://www.facebook.com/" target="_blank"><img src="img/redesSociales/facebook.png" alt=""></a>
+                        <a href="https://www.instagram.com/" target="_blank"><img src="img/redesSociales/instagram.png" alt=""></a>
+                        <a href="https://web.whatsapp.com//" target="_blank"><img src="img/redesSociales/whatsapp.png" alt=""></a>
                     </div>
 
                     <!--Loggin-->
@@ -74,7 +73,7 @@
                         <div class="buscador">
                             <form action="../../form-result.php" method="post" target="_blank">
                                 <p>
-                                Búsqueda de música: <input type="search" name="busquedamusica" placeholder="Canción, autor, álbum...">
+                                <input type="search" name="busquedamusica" placeholder="">
                                 <input type="submit" value="Buscar">
                                 </p>
                             
@@ -88,34 +87,44 @@
 
         
         <!--M A I N -->
-        <main>
+        <main class="mainCompleto">
+            <div class="title">
+                 <h1>TITULO DE LA PAGINA</h1>
+            </div>
+            
+            <section class="seccionImagen">
 
-            <div class="bodyCompleto">
-
-                <h1>TITULO DE LA PAGINA</h1>
-
-                <div class="contenido">
-                    <h2 class="contenido__title--uno">Aca un subtitulo</h2>
-                    <p class="contenido__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nostrum culpa modi vero rerum nihil praesentium atque dignissimos expedita impedit, nemo velit laboriosam, earum provident distinctio tempora neque veniam dolorum?</p>
-                    <img class="contenido__imagen"src="img/img_carga.jpg" alt="">
+                <div class="seccionImagen__title">
+                    <h2 >Aca un subtitulo</h2>
                 </div>
 
+                <div class="seccionImagen__contenido">
+                    <p class="seccionImagen__contenido--parrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eligendi quasi corrupti velit quibusdam. At et alias provident? Nesciunt optio consequuntur, accusamus mollitia nihil laborum hic numquam quod quibusdam vitae?
+                    Debitis, et quasi! Fuga sapiente blanditiis maiores odio recusandae corporis omnis enim porro similique et, fugit dolores doloribus eaque totam molestiae laboriosam explicabo in eos! Recusandae ut nam commodi maiores?
+                    Exercitationem repellat ipsa asperiores id minus eos aliquam laudantium illum! Velit libero animi laborum assumenda suscipit aliquid unde quaerat maxime pariatur! Saepe voluptatum suscipit perspiciatis cum ex amet ipsam beatae!
+                    Eaque sed officiis sunt incidunt rem ratione atque fuga quis non mollitia adipisci, dolorem quisquam nobis. Accusamus nemo quo ut dolorem quos quisquam commodi sapiente, illo rem repellat quam voluptas?
+                    Quidem maiores ipsum consectetur sed, cum, aut amet odio hic eligendi sint ea praesentium quos perferendis culpa provident magni, accusantium dolores facere fuga modi facilis exercitationem rerum ex? Similique, ratione!</p>
+                    <img class="seccionImagen__contenido--img"src="img/redesSociales/whatsapp.png" alt="">
+                </div>
+            </section>
                 
+            <section class="seccionVideo">
 
-
-                <div class="contenido">
                     <h2 class="contenido__title">Aca un subtitulo</h2>
                     <p class="contenido__parrafo--dos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nostrum culpa modi vero rerum nihil praesentium atque dignissimos expedita impedit, nemo velit laboriosam, earum provident distinctio tempora neque veniam dolorum?</p>
                     <iframe class="contenido__video" width="560" height="315" src="https://www.youtube.com/embed/vT3bwOS9hBI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="NavFoot">
+               
+            </section>
+            
+            
+             <nav class="NavFoot">
+            
                 <div>Menu</div>
                 <div>Menu</div>
                 <div>Menu</div>
                 <div>Menu</div>
-            </div>
+        
+            </nav>
 
         </main>
 

@@ -6,17 +6,23 @@
     font-family: 'Roboto', sans-serif;
     
 }
+/* paleta de colores
 
-
-
+.color1 { #f7f4e8 };
+.color2 { #daf3ea };
+.color3 { #85e6c0 } Celeste;
+.color4 { #6bb39b } Verde;
+.color5 { #0b0b0d } Black;
+*/
 
 /*GRID*/
 
 
-.container{
+.container1{
     display: grid;
+    background-image: linear-gradient(to bottom, #f7f4e8, #daf3ea);
     grid-template-columns: repeat(4, 2fr);
-    grid-template-rows: 2fr 2fr 4fr 4fr 4fr 4fr 2fr 2fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 1fr 0.4fr 0.4fr; 
     grid-template-areas: 
     "header header header header"
     "header header header header"
@@ -26,77 +32,240 @@
     "main main main main"
     "footer footer footer footer"
     "footer footer footer footer";
-    gap: 1em;
+    gap: 5px;
 
 }
 
 
 
 header{
-    background-color: chartreuse;
+    background-color: #f7f4e8;
     grid-area: header;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-rows:2fr 2fr 2fr  ;
     grid-template-areas: 
     "logo RedesSociales LogginBuscador"
     "logo RedesSociales LogginBuscador"
     "BarraMenu BarraMenu BarraMenu";
-    gap: 13em;
+    gap: 0.5rem;
 }
 
 .logo{
- 
+    display: flex;
     grid-area: logo;
+    align-items: center;
+    
 }
 
-
+.logo img{
+    margin: 2%;
+    width: 250px;
+    height: 200px;
+}
 
 .RedesSociales {
 
     grid-area: RedesSociales;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
 }
 
-
+.RedesSociales img{
+    width: 3rem;
+    height: 3rem;
+    margin: 10px;
+    
+}
 
 
 .LogginBuscador {
     grid-area: LogginBuscador;
-    gap: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .Loggin {
     grid-area: Loggin;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    flex-flow: row-reverse;
+    gap: 4%;
 }
 
+.Loggin__icono{
+
+    width: 3rem;
+    height: 3rem;
+}
+
+
+
+.Loggin__text{
+
+    display: block;
+}
+
+
 .BarraMenu {
+    background-color: #6bb39b ;
     grid-area: BarraMenu;
+    justify-items: center;
 }
 
 
 main{
-    background-color: blue;
+    background-color: #daf3ea;
     grid-area: main;
     display: grid;
 }
 
-.bodyCompleto{ 
+.mainCompleto{ 
 display: grid;    
-grid-template-columns: 1fr 2fr;
-grid-template-rows: 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 0.1fr 1fr 1fr 1fr;
 grid-template-areas: 
-"logo RedesSociales Loggin"
-"logo RedesSociales buscador"
-"BarraMenu BarraMenu BarraMenu";
+"title title title title"
+"seccionImagen seccionImagen seccionImagen seccionImagen"
+"seccionVideo seccionVideo seccionVideo seccionVideo"
+"NavFoot NavFoot NavFoot NavFoot";
 }
+
+
+.title{
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    height: 1%;
+
+}
+
+.seccionImagen{
+  grid-area:seccionImagen ;  
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 2%;
+
+ 
+}
+
+.seccionImagen__title{
+    text-align: start;
+}
+.seccionImagen__contenido{
+    display: flex;
+    justify-content: space-between;
+}
+.seccionImagen__contenido--parrafo{
+    display: block;
+    font-size: 1rem;
+    width: 50%;
+}
+
+.seccionImagen__contenido--img{
+width: 30%;
+height: 30%;
+}
+.seccionVideo{
+    grid-area:seccionVideo ;  
+  }
+
+  .NavFoot{
+    grid-area:NavFoot ;  
+  }
+
 footer{
-    background-color: aqua;
+    background-color: #85e6c0;
     grid-area: footer;
 }
 
 /*estilos del Nav*/
 
 nav ul{
+    margin-top: 1%;
+    margin-inline: 5%;
     display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    list-style-type: none;
 
+   
+
+}
+
+nav ul li{
+    
+    flex-flow: row-reverse;
+
+}
+
+
+nav ul li a{
+    
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #daf3ea;
+    transition: all 0.2s;
+    
+    /*Variables por defecto en el a*/
+    --clippyAfter: polygon(0 0, 0 100%, 100% 100%, 0 0);
+    --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 84% 43%);
+    --colorafter: #daf3ea;
+    --colorbefore: rgba(23, 7, 7, 0.915);
+   
+}
+
+nav ul li a::after{
+    content:  "";
+    display: block;
+    height: 0.4em;
+    /*llamo a las variables por default*/
+    background: var(--colorafter)  ;
+    clip-path: var(--clippyAfter);
+    transition: clip-path 0.4s;
+
+}
+
+nav ul li a::before{
+    content:  "";
+    display: block;
+    height: 0.4em;
+    /*llamo a las variables por default*/
+    background: var(--colorbefore)  ;
+    clip-path: var(--clippyBefore);
+    transition: clip-path 0.4s;
+
+}
+
+
+
+
+nav ul li a:hover{
+    
+    font-size: 1.3rem;
+    color: #022116;
+    /*Cambio las variables en el default cuando paso el mouse por arriba*/
+    --clippyBefore: polygon(0 100%, 0 0, 100% 0, 21% 50%);
+    --clippyAfter: polygon(0 100%,100% 0,100% 100%,0 100% );
+    --colorafter: rgba(23, 7, 7, 0.915);
+    --colorbefore: #daf3ea;
+}
+
+nav ul li a:focus{
+    font-size: 1.2rem;
+    text-decoration:underline;
+    color: #000000;
+}
+
+h1{
+    display: block;
 }
