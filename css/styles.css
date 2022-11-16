@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+ 
     
 }
 /* paleta de colores
@@ -13,16 +13,36 @@
 .color3 { #85e6c0 } Celeste;
 .color4 { #6bb39b } Verde;
 .color5 { #0b0b0d } Black;
+
+
+
+html {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 320px) {
+    html {
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    html {
+      font-size: 22px;
+    }
+  }
+
 */
 
+
+
 /*GRID*/
+
 
 
 .container1{
     display: grid;
     background-image: linear-gradient(to bottom, #f7f4e8, #daf3ea);
-    grid-template-columns: repeat(4, 2fr);
-    grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 1fr 0.4fr 0.4fr; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px 190px 1fr 1fr 1fr 1fr 0.08fr 0.08fr; 
     grid-template-areas: 
     "header header header header"
     "header header header header"
@@ -39,11 +59,11 @@
 
 
 header{
-    background-color: #f7f4e8;
+    background-image:linear-gradient(to bottom,#f7f4e8 , Black );
     grid-area: header;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows:2fr 2fr 2fr  ;
+    grid-template-rows:100px 100px 90px  ;
     grid-template-areas: 
     "logo RedesSociales LogginBuscador"
     "logo RedesSociales LogginBuscador"
@@ -55,13 +75,20 @@ header{
     display: flex;
     grid-area: logo;
     align-items: center;
-    
+    transition: 1s;
 }
 
 .logo img{
-    margin: 2%;
+    margin: 2% 80%;
     width: 250px;
     height: 200px;
+   
+}
+
+
+
+.logo:hover{
+    transform: scale(150%);
 }
 
 .RedesSociales {
@@ -72,11 +99,20 @@ header{
     justify-content: center;
     align-items: center;
     margin: 2%;
+    
 }
 
 .RedesSociales img{
     width: 3rem;
     height: 3rem;
+    margin: 10px;
+    filter: drop-shadow(5px 5px 11px black);
+    transition: .3s;
+
+}
+.RedesSociales img:hover{
+    width: 4rem;
+    height: 4rem;
     margin: 10px;
     
 }
@@ -122,11 +158,21 @@ header{
 
 
 main{
-    background-color: #daf3ea;
+    background-image: linear-gradient(to center, #daf3ea , #f7f4e8);
     grid-area: main;
     display: grid;
 }
 
+h1{ 
+
+    font-family: 'Square Peg', cursive;
+    font-size: 4rem;
+}
+
+h2{
+    font-family: 'Josefin Sans', sans-serif;
+
+}
 .mainCompleto{ 
 display: grid;    
 grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -143,6 +189,7 @@ grid-template-areas:
     grid-area: title;
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
     height: 1%;
 
 }
@@ -163,18 +210,17 @@ grid-template-areas:
 }
 .seccionImagen__contenido{
     display: flex;
+
     justify-content: space-between;
 }
 .seccionImagen__contenido--parrafo{
-    display: block;
+justify-content: center;
     font-size: 1rem;
+    font-family: 'Varela Round', sans-serif;
     width: 50%;
 }
 
-.seccionImagen__contenido--img{
-width: 30%;
-height: 30%;
-}
+
 .seccionVideo{
     grid-area:seccionVideo ;  
   }
@@ -215,7 +261,7 @@ nav ul li a{
     text-decoration: none;
     color: #daf3ea;
     transition: all 0.2s;
-    
+    font-family: 'Josefin Sans', sans-serif;
     /*Variables por defecto en el a*/
     --clippyAfter: polygon(0 0, 0 100%, 100% 100%, 0 0);
     --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 84% 43%);
@@ -266,6 +312,11 @@ nav ul li a:focus{
     color: #000000;
 }
 
-h1{
-    display: block;
+
+.imgCarousel{
+    margin-right: 5%;
+    align-items: center;
+    width: 20%;
+    height: 20%;
+  
 }
