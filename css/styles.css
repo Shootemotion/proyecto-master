@@ -13,30 +13,12 @@
 .color3 { #85e6c0 } Celeste;
 .color4 { #6bb39b } Verde;
 .color5 { #0b0b0d } Black;
-
-
-
-html {
-    font-size: 16px;
-  }
-  @media screen and (min-width: 320px) {
-    html {
-      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-    }
-  }
-  @media screen and (min-width: 1000px) {
-    html {
-      font-size: 22px;
-    }
-  }
-
 */
 
 
 
+
 /*GRID*/
-
-
 
 .container1{
     display: grid;
@@ -44,26 +26,26 @@ html {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 100px 190px 1fr 1fr 1fr 1fr 0.08fr 0.08fr; 
     grid-template-areas: 
-    "header header header header"
-    "header header header header"
-    "main main main main"
-    "main main main main"
-    "main main main main"
-    "main main main main"
-    "footer footer footer footer"
-    "footer footer footer footer";
+    "gridHeader__Home gridHeader__Home gridHeader__Home gridHeader__Home"
+    "gridHeader__Home gridHeader__Home gridHeader__Home gridHeader__Home"
+    "gridMain__Home gridMain__Home gridMain__Home gridMain__Home"
+    "gridMain__Home gridMain__Home gridMain__Home gridMain__Home"
+    "gridMain__Home gridMain__Home gridMain__Home gridMain__Home"
+    "gridMain__Home gridMain__Home gridMain__Home gridMain__Home"
+    "gridFooter_Home gridFooter_Home gridFooter_Home gridFooter_Home"
+    "gridFooter_Home gridFooter_Home gridFooter_Home gridFooter_Home";
     gap: 5px;
 
 }
 
 
 
-header{
+.gridHeader__Home{
     background-image:linear-gradient(to bottom,#f7f4e8 , Black );
-    grid-area: header;
+    grid-area: gridHeader__Home;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows:100px 100px 90px  ;
+    grid-template-rows:6rem 6rem 5.5rem ;
     grid-template-areas: 
     "logo RedesSociales LogginBuscador"
     "logo RedesSociales LogginBuscador"
@@ -80,15 +62,36 @@ header{
 
 .logo img{
     margin: 2% 80%;
-    width: 250px;
-    height: 200px;
+    width: 24vh;
+    height: 19vh;
+    animation-name: movimiento-img;
+    animation-iteration-count:  infinite;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+.checkbtnMulti{
+    font-size: 2rem;
+    color: black;
+    margin-right: 5%;
+    float: right;
+    cursor: pointer;
+    display: none;
    
 }
 
 
 
-.logo:hover{
-    transform: scale(150%);
+
+@keyframes movimiento-img {
+    to{
+        transform: scale(1);
+       
+    }
+    
+    from{
+        transform: scale(1.03);
+ 
+    }
 }
 
 .RedesSociales {
@@ -113,7 +116,7 @@ header{
 .RedesSociales img:hover{
     width: 4rem;
     height: 4rem;
-    margin: 10px;
+    margin: 0.8rem;
     
 }
 
@@ -154,13 +157,23 @@ header{
     background-color: #6bb39b ;
     grid-area: BarraMenu;
     justify-items: center;
+    position: sticky;
+    top: 0;
+   
 }
 
 
-main{
+.gridMain__Home{
     background-image: linear-gradient(to center, #daf3ea , #f7f4e8);
-    grid-area: main;
+    grid-area: gridMain__Home;
     display: grid;
+    display: grid;    
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 1fr ;
+    grid-template-areas: 
+    "title title title title"
+    "seccionA seccionA seccionA seccionA"
+    "seccionB seccionB seccionB seccionB";
 }
 
 h1{ 
@@ -173,16 +186,7 @@ h2{
     font-family: 'Josefin Sans', sans-serif;
 
 }
-.mainCompleto{ 
-display: grid;    
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 0.1fr 1fr 1fr 1fr;
-grid-template-areas: 
-"title title title title"
-"seccionImagen seccionImagen seccionImagen seccionImagen"
-"seccionVideo seccionVideo seccionVideo seccionVideo"
-"NavFoot NavFoot NavFoot NavFoot";
-}
+
 
 
 .title{
@@ -191,11 +195,10 @@ grid-template-areas:
     justify-content: center;
     margin-top: 2rem;
     height: 1%;
-
 }
 
-.seccionImagen{
-  grid-area:seccionImagen ;  
+.seccionA{
+  grid-area:seccionA ;  
   display: flex;
   flex-flow: column;
   justify-content: space-around;
@@ -204,35 +207,37 @@ grid-template-areas:
 
  
 }
+.seccionB{
+    grid-area:seccionB ;  
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 2%;
+  
+  }
 
-.seccionImagen__title{
+.seccion__title{
     text-align: start;
 }
-.seccionImagen__contenido{
+.seccion__contenido{
     display: flex;
-
     justify-content: space-between;
 }
-.seccionImagen__contenido--parrafo{
-justify-content: center;
+
+.seccion__contenido--2{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+.seccionParrafo{
+    justify-content: center;
+    display: block;
     font-size: 1rem;
     font-family: 'Varela Round', sans-serif;
     width: 50%;
 }
 
-
-.seccionVideo{
-    grid-area:seccionVideo ;  
-  }
-
-  .NavFoot{
-    grid-area:NavFoot ;  
-  }
-
-footer{
-    background-color: #85e6c0;
-    grid-area: footer;
-}
 
 /*estilos del Nav*/
 
@@ -241,11 +246,7 @@ nav ul{
     margin-inline: 5%;
     display: flex;
     justify-content: space-evenly;
-    text-decoration: none;
     list-style-type: none;
-
-   
-
 }
 
 nav ul li{
@@ -268,6 +269,22 @@ nav ul li a{
     --colorafter: #daf3ea;
     --colorbefore: rgba(23, 7, 7, 0.915);
    
+}
+
+.checkbtn{
+    font-size: 2rem;
+    color: black;
+    margin-right: 5%;
+    float: right;
+    cursor: pointer;
+    display: none;
+   
+
+}
+
+#check{
+
+   display: none;
 }
 
 nav ul li a::after{
@@ -320,3 +337,301 @@ nav ul li a:focus{
     height: 20%;
   
 }
+
+
+.gridFooter_Home{
+    background-color: #85e6c0;
+    text-align: center;
+    grid-area: gridFooter_Home;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+
+@media  (max-width: 740px){
+
+    h1{
+        font-size: 3rem;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+
+
+    .container1{
+        display: grid;
+        background-image: linear-gradient(to bottom, #f7f4e8, #daf3ea);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 4rem 7.5rem 1fr 1fr 1fr 1fr 0.08fr 0.08fr; 
+        grid-template-areas: 
+        "gridHeader__Home gridHeader__Home gridHeader__Home gridHeader__Home"
+        "gridHeader__Home gridHeader__Home gridHeader__Home gridHeader__Home"
+        "gridMain__Home gridMain__Home gridMain__Home gridMain__Home"
+        "gridMain__Home gridMain__Home gridMain__Home gridMain__Home"
+        "gridMain__Home gridMain__Home gridMain__Home gridMain__Home"
+        "gridMain__Home gridMain__Home gridMain__Home gridMain__Home"
+        "footer footer footer footer"
+        "footer footer footer footer";
+        gap: 5px;
+    
+    }
+
+    .gridHeader__Home{
+        background-image:linear-gradient(to bottom,#f7f4e8 , Black );
+        grid-area: gridHeader__Home;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows:4rem 4rem 3.5rem  ;
+        grid-template-areas: 
+        "logo LogginBuscador LogginBuscador"
+        "logo RedesSociales RedesSociales"
+        "BarraMenu BarraMenu BarraMenu";
+        gap: 0.5rem;
+    }
+
+
+
+    .logo img{
+        margin: 1% 10%;
+      
+        width: 19vh;
+        height: 14vh;
+      
+    }
+    .buscador{
+        display: none;
+    }
+
+    .RedesSociales {
+
+        grid-area: RedesSociales;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8%;  
+    }
+
+    
+    .RedesSociales img{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0.1rem;
+        filter: drop-shadow(3px 3px 8px black);
+        transition: .3s;
+    }
+
+    .BarraMenu ul{
+       position: fixed;
+       width: 100%;
+       height: 100vh;
+       display: flex;
+       flex-flow: column;
+       justify-content:initial;
+       background-image:linear-gradient(to bottom, rgb(56, 122, 115),rgb(25, 26, 27)) ;
+       top: 12rem;
+       left: -150%;
+       transition: all .5s;
+       margin-inline: 0;
+       gap: 5%;
+       align-items: center;
+     
+    }
+
+    .BarraMenu__Multimedia ul{
+        position: fixed;
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        flex-flow: column;
+        justify-content:initial;
+        background-image:linear-gradient(to bottom, rgb(56, 122, 115),rgb(25, 26, 27)) ;
+        top: 6rem;
+        left: -150%;
+        transition: all .5s;
+        margin-inline: 0;
+        gap: 4%;
+        align-items: center;
+      
+     }
+
+
+
+
+    nav ul li{
+
+        margin-top: 5%;
+    }
+
+
+    nav ul li a{
+    
+        font-size: 1rem;
+        color: #daf3ea;
+        transition: all 0.2s;
+    }
+    
+
+    nav ul li a::after{
+        content:  "";
+        display: block;
+        height: 0.5em;
+    }
+
+
+    nav ul li a::before{
+  display: none;
+    }
+
+    
+    .checkbtn{
+        font-size: 2rem;
+        display:flex;
+        color: white;
+        float: left;
+        margin-left:5%;
+        cursor: pointer;
+    }
+    .checkbtnMulti{
+        display:flex;
+        
+        margin-top: 200%;
+        color: white;
+        cursor: pointer;
+    }
+
+
+    .imgCarousel{
+        width: 50%;
+    }
+
+    .RedesSociales img:hover{
+        width: 2rem;
+        height: 2rem;
+        margin: 0.5rem;
+        
+    }
+
+    .seccion__contenido{
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-between;
+      
+    }
+    
+    .seccionParrafo{
+       text-align: start;
+      
+    }
+  
+
+    .seccion__contenido--2{
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-between;
+       
+    }
+
+    
+
+    #check:checked ~ ul {
+        left: -5%;
+    }
+
+    .card{
+        top: 50%;
+    }
+
+}
+
+
+
+/*GRID MULTIMEDIA*/
+
+.gridMultimedia{
+    display: grid;
+    background-image: linear-gradient(to bottom, #f7f4e8, #daf3ea);
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows:9rem 20rem 20rem 1rem ; 
+    grid-template-areas: 
+    "gridHeader__multimedia gridHeader__multimedia gridHeader__multimedia gridHeader__multimedia"
+    "gridMain__multimedia gridMain__multimedia gridMain__multimedia gridMain__multimedia"
+    "gridMain__multimedia gridMain__multimedia gridMain__multimedia gridMain__multimedia"
+    "gridFooter__multimedia gridFooter__multimedia gridFooter__multimedia gridFooter__multimedia";
+    gap: 1px;
+
+}
+
+.gridHeader__multimedia{
+    grid-area:gridHeader__multimedia ;
+    display: flex;
+    justify-content:space-between;
+    background-color: #6bb39b;
+
+
+}
+.gridMain__multimedia{
+grid-area:gridMain__multimedia ;
+}
+
+.list-group{
+    grid-area: list-group;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    top: 50%;
+    left: 0%;
+}
+.gridFooter__multimedia{
+    grid-area:gridFooter__multimedia ;
+    background-color: #85e6c0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.logoMulti{
+    display: flex;
+    grid-area: logo;
+    align-items: center;
+    transition: 1s;
+}
+
+.logoMulti img{
+    margin: 1% 10%;
+    top: 1%;
+    left: -9%;
+    width: 7rem;
+    height: 7rem;
+    animation-name: movimiento-img;
+    animation-iteration-count:  infinite;
+    animation-duration: 1s;
+    animation-direction: alternate;
+
+}
+.BarraMenu__Multimedia{
+    background-color: #6bb39b ;
+    width: 100%;
+    display: flex;
+    position: sticky;
+    margin-inline: 41%;
+    top: 0;
+   
+}
+
+
+.BarraMenu__Multimedia ul{
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+    align-content: center;
+    gap: 22%;  
+
+}
+
+
