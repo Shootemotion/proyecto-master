@@ -1,0 +1,191 @@
+@media  (max-width: 740px){
+    .gridHeader{
+        @include gridArea(gridHeader);
+        @include grid(3, .1rem);
+
+        .logo{
+       
+            margin: 0.5%;
+
+            img{
+                @include medidasCaja(19vh, 14vh, 0.5% 4%);
+            }
+    
+        }
+    
+        .RedesSociales{
+            position: absolute;
+            top: 8%;
+            flex-wrap: nowrap;
+            right: 10%;
+            margin: 1%;
+            gap: 15%;
+            img{
+                @include medidasCaja(1.5rem, 1.5rem, 0.1rem);
+                filter: drop-shadow(3px 3px 8px black);
+               
+                &:hover{
+                    @include medidasCaja(2rem, 2rem, 0.2rem);
+                 }
+            }
+        }
+    
+    
+        .LogginBuscador{
+            @include gridArea(LogginBuscador);
+            @include flexible(flex, column, wrap, space-between, center);
+            margin: 2%;
+            .buscador{
+                display: none;
+             }
+         
+            .Loggin{
+                @include flexible(flex, row, nowrap , space-around, center);
+                gap: 5%;
+                flex-direction: row-reverse;
+                .Loggin__icono{
+                    @include medidasCaja(3rem, 3rem, auto);
+                     }
+             
+                }
+            
+                
+            }
+        
+            
+    .BarraMenu{
+    
+        height: 60px;
+            .checkbtn{
+                font-size: 2rem;
+                display:flex;
+                color: white;
+                justify-content: center;
+                float: left;
+                margin:2%;
+                margin-left:5%;
+                cursor: pointer;
+            }
+
+          ul{
+            position: fixed;
+            display: flex;
+            width: 60vh;
+            height: 70vh;
+            flex-flow: column;
+            justify-content:initial;
+            background-image:linear-gradient(to bottom, rgb(56, 122, 115),rgb(25, 26, 27)) ;
+            top: 11rem;
+            left: -160%;
+            transition: all .5s;
+            margin-inline: 0;
+            gap: 4%;
+            align-items: center;
+          
+            li{
+
+                margin-top: 5%;
+                margin-right: 10%;
+                a{
+                    font-size: 1rem;
+                    color: #daf3ea;
+                    transition: all 0.2s;
+                    &::after{
+                        content:  "";
+                        display: block;
+                        height: 0.5em;
+                    }
+                    &::before{
+                        display: none;
+                    }
+                
+                }
+            }
+        
+          }
+    
+        
+        }
+    }
+      
+    
+    .gridMain {
+      .title{
+        h1{
+            font-size: 3rem;
+        }
+        
+      }
+    gap: 5%;
+
+
+        .seccionA{
+            margin: 0%;
+            gap: 2%;
+
+              .seccion__title{
+                margin-left: 4em;
+              }
+            .seccion__contenido{
+                @include secContenidoMQ;
+               align-items: center;
+                .imgCarousel{
+                    display: flex;
+                    justify-content: center;
+                    width: 80%;      
+                
+                }
+                .seccionParrafo{
+                    min-height: 20vh;
+                    display: flex;
+                    justify-content: left;
+                    align-items: left;
+                    margin: 0%;
+                    text-align: center;
+                    font-size: 0.8rem;
+                    font-family: $letra_P;
+                    width: 80%;
+             }
+
+        
+            }  
+
+        }
+
+        .seccionB{
+            
+            .seccion__title{
+                margin-left:5vh;
+                margin-top: 44vh;
+            }
+
+        .contenido__video{
+            @include medidasCaja(70%,70%,0);
+
+        }
+        .seccion__contenido--2{
+        
+            @include secContenidoMQ;
+            align-items: center;
+
+            .seccionParrafo--2{
+                 min-height: 20vh;
+                    display: flex;
+                    justify-content: left;
+                    align-items: left;
+                    margin-top: 15vh;
+                    text-align: center;
+                    font-size: 0.8rem;
+                    font-family: $letra_P;
+                    width: 80%;
+         }
+
+        }
+    }
+
+        
+  
+      
+
+    }
+}

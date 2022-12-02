@@ -1,0 +1,30 @@
+%seccion{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 1%;
+}
+
+
+%seccionContenido{
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+}
+
+
+
+
+%seccionParrafo{
+    min-height: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    text-align: center;
+    font-size: 1rem;
+    font-family: $letra_P;
+    width: 70%;
+}
+

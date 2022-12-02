@@ -1,0 +1,58 @@
+//se crean para reutilizar codigo
+
+//mixin con parametros
+
+@mixin medidasCaja ($ancho, $alto, $margen){
+    width: $ancho;
+    height: $alto;
+    margin: $margen;
+}
+
+
+@mixin grid  ($col, $Espacio) {
+    display: grid;
+    grid-template-columns: repeat($col, 1fr);
+    gap: $Espacio;
+    
+        @media screen and (max-width:480px) {
+            grid-template-columns: 1fr;
+            gap: 0em;
+          
+        }
+}
+
+
+@mixin gridArea($name){
+    grid-area: $name;
+}
+
+
+@mixin flexible ($dis, $direction, $corte, $just, $align) {
+    display: $dis;
+    flex-flow: $direction $corte;
+    justify-content:$just ;
+    align-items: $align;
+}
+
+
+//mixin responsive prueba
+
+@mixin mobile($medida : 480px) {
+    @media screen and (max-width:$medida) {
+        @content;
+        
+    }
+}
+
+@mixin bordetop ($alto, $largo , $col){
+border-top: $alto solid $col;
+left: $largo;
+}
+
+
+@mixin secContenidoMQ{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+

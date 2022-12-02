@@ -1,0 +1,44 @@
+
+
+
+@media  (max-width: 740px){
+         
+        
+    .BarraMenu2{
+    
+        height: 60px;
+    
+          ul{
+     
+            justify-content:initial;
+            background-image:linear-gradient(to bottom, rgb(56, 122, 115),rgb(25, 26, 27)) ;
+            transition: all .5s;
+            margin-inline: 0;
+            gap: 4%;
+            align-items: center;
+          
+            li{
+
+                margin-top: 5%;
+                margin-right: 10%;
+                a{
+                    font-size: 1rem;
+                    color: #daf3ea;
+                    transition: all 0.2s;
+                    &::after{
+                        content:  "";
+                        display: block;
+                        height: 0.5em;
+                    }
+                    &::before{
+                        display: none;
+                    }
+                
+                }
+            }
+        
+          }
+    
+        }
+    }
+  
