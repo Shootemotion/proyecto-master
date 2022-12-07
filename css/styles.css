@@ -27,29 +27,162 @@
   font-family: "Varela Round", sans-serif;
   width: 70%; }
 
+.gridHeaderM {
+  grid-area: gridHeader;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.3rem;
+  background-image: url("../img/GENERAL/IMG_0511.jpg");
+  grid-template-areas: "logo RedesSociales RedesSociales" "logo RedesSociales RedesSociales"; }
+  @media screen and (max-width: 480px) {
+    .gridHeaderM {
+      grid-template-columns: 1fr;
+      gap: 0em; } }
+  .gridHeaderM .logo {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    transition: 1s; }
+    .gridHeaderM .logo img {
+      width: 30vh;
+      height: 24vh;
+      margin: 1% 8%;
+      animation-name: movimiento-img;
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+      animation-direction: alternate; }
+  .gridHeaderM .RedesSociales {
+    grid-area: RedesSociales;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    gap: 5%; }
+    .gridHeaderM .RedesSociales img {
+      width: 3rem;
+      height: 3rem;
+      margin: 0.6rem;
+      filter: drop-shadow(5px 5px 11px black);
+      transition: .3s; }
+      .gridHeaderM .RedesSociales img:hover {
+        width: 4rem;
+        height: 4rem;
+        margin: 0.8rem; }
+
+.BarraMenu2 {
+  grid-area: BarraMenu2;
+  background-image: linear-gradient(to left, #6bb39b, #85e6c0);
+  justify-items: center;
+  border: 2px solid #504d4d;
+  position: sticky;
+  top: 0;
+  height: 5rem; }
+  .BarraMenu2 ul {
+    margin-inline: 1%;
+    gap: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .BarraMenu2 ul li a {
+      font-size: 1rem;
+      text-decoration: none;
+      color: #373434;
+      -webkit-text-stroke: 0.25px black;
+      transition: all 0.5s;
+      font-family: "Josefin Sans", sans-serif;
+      /*Variables por defecto en el a*/
+      --clippyAfter: polygon(0 0, 0 100%, 100% 100%, 0 0);
+      --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 84% 43%);
+      --colorafter: #daf3ea;
+      --colorbefore: rgba(23, 7, 7, 0.915); }
+      .BarraMenu2 ul li a::after {
+        content: "";
+        display: block;
+        height: 0.2em;
+        /*llamo a las variables por default*/
+        background: var(--colorafter);
+        clip-path: var(--clippyAfter);
+        transition: clip-path 0.4s; }
+      .BarraMenu2 ul li a::before {
+        content: "";
+        display: block;
+        height: 0.2em;
+        /*llamo a las variables por default*/
+        background: var(--colorbefore);
+        clip-path: var(--clippyBefore);
+        transition: clip-path 0.4s; }
+      .BarraMenu2 ul li a:hover {
+        font-size: 1.1rem;
+        color: #022116;
+        /*Cambio las variables en el default cuando paso el mouse por arriba*/
+        --clippyBefore: polygon(0 100%, 0 0, 100% 0, 21% 50%);
+        --clippyAfter: polygon(0 100%,100% 0,100% 100%,0 100% );
+        --colorafter: rgba(23, 7, 7, 0.915);
+        --colorbefore: #daf3ea; }
+      .BarraMenu2 ul li a:focus {
+        font-size: 1.2rem;
+        text-decoration: underline;
+        color: #000000;
+        -webkit-text-stroke: 0.25px white; }
+
+.containerMultimedia {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center; }
+  .containerMultimedia .listaMultimedia {
+    background-image: linear-gradient(to left, #daf3ea, #f7f4e8);
+    justify-items: center;
+    border: 2px solid #504d4d;
+    position: sticky;
+    top: 80px; }
+  .containerMultimedia .seccionFotos {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 5%; }
+    .containerMultimedia .seccionFotos .title {
+      display: block; }
+    .containerMultimedia .seccionFotos .agrupacionCard {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center; }
+      .containerMultimedia .seccionFotos .agrupacionCard .cardPropia .imgCard img {
+        width: 100%;
+        height: 35vh; }
+  .containerMultimedia .seccionVideo {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 5%; }
+    .containerMultimedia .seccionVideo .title {
+      display: block; }
+    .containerMultimedia .seccionVideo .agrupacionVideo {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center; }
+      .containerMultimedia .seccionVideo .agrupacionVideo .cardPropia .imgCard img {
+        width: 100%;
+        height: 35vh; }
+
 @media (max-width: 740px) {
   .BarraMenu2 {
-    height: 60px; }
-    .BarraMenu2 ul {
-      justify-content: initial;
-      background-image: linear-gradient(to bottom, #387a73, #191a1b);
-      transition: all .5s;
-      margin-inline: 0;
-      gap: 4%;
-      align-items: center; }
-      .BarraMenu2 ul li {
-        margin-top: 5%;
-        margin-right: 10%; }
-        .BarraMenu2 ul li a {
-          font-size: 1rem;
-          color: #daf3ea;
-          transition: all 0.2s; }
-          .BarraMenu2 ul li a::after {
-            content: "";
-            display: block;
-            height: 0.5em; }
-          .BarraMenu2 ul li a::before {
-            display: none; } }
+    height: max-content; }
+  .containerMultimedia .listaMultimedia {
+    background-image: linear-gradient(to left, #daf3ea, #f7f4e8);
+    justify-items: center;
+    border: 2px solid #504d4d;
+    position: fixed;
+    top: 85vh;
+    height: 50px; } }
 
 /*Grid Container*/
 .containerGrid {
@@ -252,61 +385,6 @@
     transform: scale(1); }
   from {
     transform: scale(1.03); } }
-
-.containerGrid_bootstrap {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.3rem;
-  grid-template-areas: "gridHeader gridHeader gridHeader gridHeader" "gridHeader gridHeader gridHeader gridHeader" "gridMain gridMain gridMain gridMain" "gridFooter gridFooter gridFooter gridFooter"; }
-  @media screen and (max-width: 480px) {
-    .containerGrid_bootstrap {
-      grid-template-columns: 1fr;
-      gap: 0em; } }
-  .containerGrid_bootstrap .gridHeaderM {
-    grid-area: gridHeader;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.3rem;
-    background-image: url("../img/GENERAL/IMG_0511.jpg");
-    grid-template-areas: "logo RedesSociales RedesSociales" "logo RedesSociales RedesSociales" "navbar navbar navbar"; }
-    @media screen and (max-width: 480px) {
-      .containerGrid_bootstrap .gridHeaderM {
-        grid-template-columns: 1fr;
-        gap: 0em; } }
-    .containerGrid_bootstrap .gridHeaderM .logo {
-      grid-area: logo;
-      display: flex;
-      justify-content: center;
-      margin: 1%;
-      transition: 1s; }
-      .containerGrid_bootstrap .gridHeaderM .logo img {
-        width: 30vh;
-        height: 23vh;
-        margin: 1% 8%;
-        animation-name: movimiento-img;
-        animation-iteration-count: infinite;
-        animation-duration: 1s;
-        animation-direction: alternate; }
-      .containerGrid_bootstrap .gridHeaderM .logo .navbar {
-        grid-area: navbar;
-        width: 100%; }
-    .containerGrid_bootstrap .gridHeaderM .RedesSociales {
-      grid-area: RedesSociales;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      align-items: center;
-      margin: 2%; }
-      .containerGrid_bootstrap .gridHeaderM .RedesSociales img {
-        width: 3rem;
-        height: 3rem;
-        margin: 0.6rem;
-        filter: drop-shadow(5px 5px 11px black);
-        transition: .3s; }
-        .containerGrid_bootstrap .gridHeaderM .RedesSociales img:hover {
-          width: 4rem;
-          height: 4rem;
-          margin: 0.8rem; }
 
 @media (max-width: 740px) {
   .gridHeader {

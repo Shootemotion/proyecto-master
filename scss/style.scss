@@ -266,70 +266,6 @@
     }
 }
 
-.containerGrid_bootstrap{ 
-    @include grid (4, .3rem);
-    grid-template-areas: 
-    "gridHeader gridHeader gridHeader gridHeader"
-    "gridHeader gridHeader gridHeader gridHeader"
-    "gridMain gridMain gridMain gridMain"
-    "gridFooter gridFooter gridFooter gridFooter";
-   
-
-
-
-.gridHeaderM{
-    @include gridArea(gridHeader);
-    @include grid(3, .3rem);
-    background-image: url("../img/GENERAL/IMG_0511.jpg");
-    grid-template-areas: 
-    "logo RedesSociales RedesSociales"
-    "logo RedesSociales RedesSociales"
-    "navbar navbar navbar";
-    .logo{
-        @include gridArea(logo);
-        display: flex;
-        justify-content: center;
-        margin: 1%;
-        transition: 1s;
-        img{
-            @include medidasCaja(30vh, 23vh, 1% 8%);
-            animation-name: movimiento-img;
-            animation-iteration-count:  infinite;
-            animation-duration: 1s;
-            animation-direction: alternate;
-        }
-
-        .navbar{
-            grid-area: navbar;
-            width: 100%;
-        }
-
-    }
-
-    .RedesSociales{
-        @include gridArea(RedesSociales);
-        @include flexible(flex, row, wrap, center, center);
-        margin: 2%;
-        img{
-            @include medidasCaja(3rem, 3rem, 0.6rem);
-            filter: drop-shadow(5px 5px 11px black);
-            transition: .3s;
-            &:hover{
-                @include medidasCaja(4rem, 4rem, 0.8rem);
-             }
-        }
-    }
-
-}
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -337,6 +273,9 @@
 
 
 @media  (max-width: 740px){
+
+  
+
     .gridHeader{
         @include gridArea(gridHeader);
         @include grid(3, .1rem);
@@ -391,6 +330,7 @@
             }
         
             
+  
     .BarraMenu{
     
         height: 60px;
