@@ -1,112 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="description" content="Biblioteca multimedia para compartir nuestras reuniones con el mundo">
+    <meta name="keywords" content="BIBLIOTECA, MULTIMEDIA, IGLESIA, FOTOS, VIDEOS">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--TIPOGRAFIA-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Carter+One&family=Comfortaa:wght@300&family=Gorditas&family=Indie+Flower&family=Josefin+Sans&family=Pacifico&family=Roboto:wght@100;300;400&family=Satisfy&family=Secular+One&family=Sedgwick+Ave+Display&family=Square+Peg&family=Varela+Round&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <!--Link a CSS Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!--Link a Icono de Pagina-->
+    <link rel="shortcut icon" href="../img/LogoByN.jpeg" type="image/x-icon">
     <!--Link a Css-->
     <link rel="stylesheet" href="../css/styles.css">
+     <!--Link a Icono-->
+    <script src="https://kit.fontawesome.com/f0c65f0a2e.js" crossorigin="anonymous"></script>
     <title>Formar Parte</title>
 </head>
+
 <body>
-    <header>
+
+    <div class="containerBody">
+        <!--H E A D E R -->
+         <header class="gridHeaderM">
+            
+                    <!--Logo-->
+                    <div class="logo">
+                       <a href="index.html"> <img src="../img/LOGO/Logo .png" alt=""></a>
+                    </div>
+
+                    <!--MENU-->  
+                                  
+                    <!--Icono Redes Sociales -->
+                    <div class="RedesSociales">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="../img/redesSociales/facebook.png" alt=""></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="../img/redesSociales/instagram.png" alt=""></a>
+                        <a href="https://web.whatsapp.com//" target="_blank" rel="noopener noreferrer"><img src="../img/redesSociales/whatsapp.png" alt=""></a>
+                    </div>
+                  <!--Logging -->
+            
+                      <div class="Logging">
+                          <img class="Loggin__icono" src="../img/redesSociales/Loggin.png" alt="">
+                          <a class="Loggin__text" href="">Loggin</a>
+                          <a  class="Loggin__text" href="">Registrar</a>
+                      </div>
+
         
-        <!--Logo-->
-        <div class="logo">
-            <img src="../img/LogoColor.jpeg" alt="">
-        </div>
+
+
+
+
+             
+           
+     
+        </header>
+
+        <nav class="navbar navbar-expand-lg bg-light mh-100 BarraMenu2">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="../pages/multimedia.html">Multimedia</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Ministerios</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Recursos</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="../pages/formarParte.html">Formar Parte</a>
+                </li>
+             
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Videos, Fotos, etc..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+
    
-       <!--MENU-->
-           <div>       
-               <nav class="menu">
-                   <ul>
-                       <li>
-                           <a href="../index.html">HOME</a>
-                       </li>
-                       <li>
-                          <a href="multimedia.html">MULTIMEDIA</a>
-                       </li>
-                       <li>
-                          <a href="recursos.html">RECURSOS</a>
-                       </li>
-                       <li>
-                            <a href="ministerios.html">MINISTERIOS</a>
-                       </li>
-                       <li class="active">
-                          <a href="formarParte.html">FORMAR PARTE</a>
-                       </li>
-                   </ul>
-               </nav>
-           </div>
+        <!--M A I N -->
+        <main>  
+          <div class="containerFormar">
+              <div class="title">
+                <h1>  Forma Parte <br><b> Sos Bienvenido</b>  </h1>
+              </div>
+              
+              <div class="formularioMapa">
+               <div class="formulario">
+                <div class="subTitle">
+                    <h2>Envia tus Datos</h2>
+                </div>
+              <form class="row g-1 w-100" >
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Direccion</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Av. Rivadavia 213">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Direccion 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Departamento, Piso, Estudio">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">Pais</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Elegir...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="inputZip" class="form-label">CP</label>
+                  <input type="text" class="form-control" id="inputZip">
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+              </form>
+            </div>
+       
 
-        <!--Icono Redes Sociales-->
-        <div class="RedesSociales">
-            <img src="../img/redesSociales/facebook.png" alt="">
-            <img src="../img/redesSociales/instagram.png" alt="">
-            <img src="../img/redesSociales/whatsapp.png" alt="">
+        <div class="mapa">
+            <div class="subTitle">
+                <h2>Donde Estamos</h2>
+            </div>
+            <hr>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1237.625979844949!2d-67.49668018601675!3d-45.86377805854415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1670524781940!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+          </div>
+
+          <div class="formarParte__datos--footer">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, sapiente dolore. Ipsa dolorum perferendis, laborum similique perspiciatis cumque inventore rerum aut, vel voluptatum ratione. Aliquam alias quis dolorem non assumenda!
+            Rerum sunt, iusto dignissimos officia nihil reiciendis itaque. Quia laudantium dolores autem hic expedita suscipit reiciendis quam eos? Officiis omnis aperiam fuga unde harum expedita beatae iure dolor blanditiis amet!
+            Sunt ducimus dolorem saepe totam nihil quaerat fugiat rem dolor. Mollitia quos odio nisi, ad ipsa perferendis ea ducimus laudantium repellat dolor quasi odit aliquam ab doloremque rem dolore eaque?</p>
         </div>
+    </div>
+    </div>
 
-        <!--Loggin-->
-        <div class="Loggin">
-            <img class="Loggin__icono" src="../img/Loggin.png" alt="">
-            <a class="Loggin__text" href="">Loggin</a>
-            <a  class="Loggin__text" href="">Registrar</a>
-        </div>
+    </section>
 
-    </header>
+        
+    
 
+            <!-- JavaScript Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+      
+        </main>
 
-    <main>
+    <!--F O O T E R -->   
+        <footer class="gridFooter">
+            <p>Copyright  , todos los derechos reservados.</p>
+        </footer>
 
-        <h1>FORMULARIO</h1>
-
-        <form >
-            <fieldset>
-                <legend>Envia tus datos</legend>
-                <div class="form">
-                    <label for="nombre">NOMBRE</label>
-                    <input type="text" name="nombre" placeholder="Nombre sin apellido">
-                </div>
-                
-                <div class="form">
-                    <label for="apellido">APELLIDO</label>
-                    <input type="text" name="apellido" placeholder="apellido">
-                </div>
-
-                <div class="form">
-                    <label for="email">EMAIL</label>
-                    <input type="email" name="email" placeholder="tuemail@gmail.com">
-                </div>
-
-                <div class="form">
-                    <label for="telefono">TELEFONO</label>
-                    <input type="number" name="telefono" placeholder="0297505646">
-                </div>
-
-                <div class="form">
-                    <label for="pais">PAIS</label>
-                    <select name="pais" id="">
-                        <option value="ARGENTINA">ARGENTINA</option>
-                        <option value="BRAZIL">BRAZIL</option>
-                        <option value="CHINA">CHINA</option>
-                        <option value="URUGUAY">URUGUAY</option>
-                    </select>
-                </div>
-
-                <div class="form">
-                    <input type="submit"value="Evia tus datos">
-                    <input type="reset" value="Borrar">
-                
-                </div>
-            </fieldset>
-        </form>
-
-    </main>
-
-
-    <footer>
-        <p>Copyright  , todos los derechos reservados.</p>
-    </footer>
+    </div>
 
 </body>
 </html>

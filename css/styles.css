@@ -93,7 +93,7 @@
 
 .BarraMenu2 {
   grid-area: BarraMenu2;
-  background-image: linear-gradient(to left, #6bb39b, #85e6c0);
+  background-image: linear-gradient(45deg, #6bb39b, #85e6c0);
   justify-items: center;
   border: 2px solid #504d4d;
   position: sticky;
@@ -113,36 +113,36 @@
       transition: all 0.5s;
       font-family: "Josefin Sans", sans-serif;
       /*Variables por defecto en el a*/
-      --clippyAfter: polygon(0 0, 0 100%, 100% 100%, 0 0);
-      --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 84% 43%);
-      --colorafter: #daf3ea;
-      --colorbefore: rgba(23, 7, 7, 0.915); }
+      --clippyAfter: polygon(0 100%, 100% 100%, 100% 0, 63% 80%, 37% 80%, 0 50%);
+      --clippyBefore: polygon(0 0, 100% 0, 100% 50%, 68% 23%, 33% 23%, 0 100%);
+      --colorafter: #104632;
+      --colorbefore: rgba(117, 244, 206, 0.915); }
       .BarraMenu2 ul li a::after {
         content: "";
         display: block;
-        height: 0.2em;
+        height: .3em;
         /*llamo a las variables por default*/
         background: var(--colorafter);
         clip-path: var(--clippyAfter);
-        transition: clip-path 0.4s; }
+        transition: clip-path 0.3s; }
       .BarraMenu2 ul li a::before {
         content: "";
         display: block;
-        height: 0.2em;
+        height: 0.3em;
         /*llamo a las variables por default*/
         background: var(--colorbefore);
         clip-path: var(--clippyBefore);
-        transition: clip-path 0.4s; }
+        transition: clip-path 0.5s; }
       .BarraMenu2 ul li a:hover {
-        font-size: 1.1rem;
-        color: #022116;
+        font-size: 1.34rem;
+        color: #ffffff;
         /*Cambio las variables en el default cuando paso el mouse por arriba*/
-        --clippyBefore: polygon(0 100%, 0 0, 100% 0, 21% 50%);
-        --clippyAfter: polygon(0 100%,100% 0,100% 100%,0 100% );
-        --colorafter: rgba(23, 7, 7, 0.915);
-        --colorbefore: #daf3ea; }
+        --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 70% 23%, 33% 23%, 0 23%);
+        --clippyAfter: polygon(0 100%, 100% 100%, 100% 80%, 63% 80%, 37% 80%, 0 0);
+        --colorafter: rgba(205, 255, 250, 0.915);
+        --colorbefore: #317c60; }
       .BarraMenu2 ul li a:focus {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         text-decoration: underline;
         color: #000000;
         -webkit-text-stroke: 0.25px white; }
@@ -156,12 +156,21 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover; }
+  .containerMultimedia .title {
+    text-align: center;
+    font-family: "Square Peg", cursive; }
+    .containerMultimedia .title h1 {
+      font-size: 4rem; }
   .containerMultimedia .listaMultimedia {
     background-image: linear-gradient(to left, #daf3ea, #f7f4e8);
     justify-items: center;
     border: 2px solid #504d4d;
     position: sticky;
-    top: 80px; }
+    top: 80px;
+    box-shadow: 0px 0px 30px black; }
+    .containerMultimedia .listaMultimedia .container-fluid a {
+      justify-content: center;
+      font-family: "Square Peg", cursive; }
   .containerMultimedia .seccionFotos {
     display: flex;
     flex-flow: column wrap;
@@ -169,16 +178,24 @@
     align-items: center;
     width: 100%;
     gap: 5%; }
-    .containerMultimedia .seccionFotos .title {
-      display: block; }
+    .containerMultimedia .seccionFotos .subTitle {
+      display: block;
+      text-align: center;
+      font-family: "Josefin Sans", sans-serif;
+      margin-top: 3%; }
+      .containerMultimedia .seccionFotos .subTitle h2 {
+        font-size: 3rem; }
     .containerMultimedia .seccionFotos .agrupacionCard {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-around;
-      align-items: center; }
+      align-items: center;
+      gap: 5%; }
       .containerMultimedia .seccionFotos .agrupacionCard .cardPropia {
         box-shadow: 0px 0px 30px black;
-        margin-top: 5%; }
+        margin-top: 1%; }
+        .containerMultimedia .seccionFotos .agrupacionCard .cardPropia .pieCard {
+          text-align: center; }
         .containerMultimedia .seccionFotos .agrupacionCard .cardPropia .imgCard img {
           width: 100%;
           height: 35vh; }
@@ -189,16 +206,26 @@
     align-items: center;
     width: 100%;
     gap: 5%; }
-    .containerMultimedia .seccionVideo .title {
-      display: block; }
+    .containerMultimedia .seccionVideo .subTitle {
+      display: block;
+      text-align: center;
+      font-family: "Josefin Sans", sans-serif;
+      margin-top: 6%; }
+      .containerMultimedia .seccionVideo .subTitle h2 {
+        font-size: 3rem; }
     .containerMultimedia .seccionVideo .agrupacionVideo {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-around;
       align-items: center; }
-      .containerMultimedia .seccionVideo .agrupacionVideo .cardPropia .imgCard img {
-        width: 100%;
-        height: 35vh; }
+      .containerMultimedia .seccionVideo .agrupacionVideo .cardPropia {
+        box-shadow: 0px 0px 30px black;
+        margin-top: 3%; }
+        .containerMultimedia .seccionVideo .agrupacionVideo .cardPropia .pieCard {
+          text-align: center; }
+        .containerMultimedia .seccionVideo .agrupacionVideo .cardPropia .imgCard img {
+          width: 100%;
+          height: 35vh; }
 
 @media (max-width: 740px) {
   .gridHeaderM {
@@ -259,6 +286,36 @@
     position: fixed;
     top: 85vh;
     height: 50px; } }
+
+.containerFormar {
+  background-image: url("../img/fondos/gray-concrete-wall.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; }
+  .containerFormar .title {
+    text-align: center;
+    font-family: "Square Peg", cursive; }
+    .containerFormar .title h1 {
+      font-size: 4rem; }
+  .containerFormar .formularioMapa {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%; }
+    .containerFormar .formularioMapa .formulario {
+      width: 40%; }
+      .containerFormar .formularioMapa .formulario .subTitle {
+        margin-bottom: 5%;
+        text-align: center;
+        font-family: "Josefin Sans", sans-serif; }
+  .containerFormar .mapa .subTitle {
+    margin-bottom: 5%;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif; }
+  .containerFormar .formarParte__datos--footer {
+    margin: 10%;
+    height: 20%; }
 
 /*Grid Container*/
 .containerGrid {

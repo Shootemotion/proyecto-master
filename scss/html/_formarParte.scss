@@ -1,0 +1,41 @@
+
+@import "utilidades/variables";
+@import "utilidades/mixin";
+.containerFormar{
+
+    background-image: url("../img/fondos/gray-concrete-wall.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    .title{
+        text-align: center;
+        font-family:$letra_H1;
+        h1{
+        font-size: 4rem
+        }
+    }
+    .formularioMapa{
+        @include flexible(flex, row, wrap, space-around, center);
+        margin-top: 5%;
+        .formulario{
+            width: 40%;
+            .subTitle{
+                margin-bottom: 5%;
+                text-align: center;
+                font-family:$letra_H2;
+            }
+
+        }
+    }
+        .mapa{
+            .subTitle{
+            margin-bottom: 5%;
+            text-align: center;
+            font-family:$letra_H2;
+        }
+    }
+        .formarParte__datos--footer{
+            margin: 10%;
+            height: 20%;
+        }
+}

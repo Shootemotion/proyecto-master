@@ -1,6 +1,6 @@
 //Importa archivos secundarios
 @import "utilidades/variables";
-
+@import "utilidades/mixin";
 
 .gridHeaderM{
     @include gridArea(gridHeader);
@@ -71,7 +71,7 @@
 
 .BarraMenu2{
     @include gridArea(BarraMenu2);
-    background-image:  linear-gradient(to left,$color-CelesteOscuro , $color-Celeste );
+    background-image:  linear-gradient(45deg,$color-CelesteOscuro , $color-Celeste );
     justify-items: center;
     border:2px solid rgb(80, 77, 77) ;
     position: sticky;
@@ -94,42 +94,42 @@
                 transition: all 0.5s;
                 font-family: $letra_Nav;
                 /*Variables por defecto en el a*/
-                --clippyAfter: polygon(0 0, 0 100%, 100% 100%, 0 0);
-                --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 84% 43%);
-                --colorafter: #daf3ea;
-                --colorbefore: rgba(23, 7, 7, 0.915);
+                --clippyAfter: polygon(0 100%, 100% 100%, 100% 0, 63% 80%, 37% 80%, 0 50%);
+                --clippyBefore: polygon(0 0, 100% 0, 100% 50%, 68% 23%, 33% 23%, 0 100%);
+                --colorafter: #104632;
+                --colorbefore: rgba(117, 244, 206, 0.915);
                 &::after{
                     content:  "";
                     display: block;
-                    height: 0.2em;
+                    height: .3em;
                     /*llamo a las variables por default*/
                     background: var(--colorafter)  ;
                     clip-path: var(--clippyAfter);
-                    transition: clip-path 0.4s;
+                    transition: clip-path 0.3s;
                 }
                 &::before{
                     content:  "";
                     display: block;
-                    height: 0.2em;
+                    height: 0.3em;
                     /*llamo a las variables por default*/
                     background: var(--colorbefore)  ;
                     clip-path: var(--clippyBefore);
-                    transition: clip-path 0.4s;
+                    transition: clip-path 0.5s;
             
                 }
                &:hover{
 
-                font-size: 1.1rem;
-                color: #022116;
+                font-size: 1.34rem;
+                color: #ffffff;
                 /*Cambio las variables en el default cuando paso el mouse por arriba*/
-                --clippyBefore: polygon(0 100%, 0 0, 100% 0, 21% 50%);
-                --clippyAfter: polygon(0 100%,100% 0,100% 100%,0 100% );
-                --colorafter: rgba(23, 7, 7, 0.915);
-                --colorbefore: #daf3ea;
+                --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 70% 23%, 33% 23%, 0 23%);
+                --clippyAfter: polygon(0 100%, 100% 100%, 100% 80%, 63% 80%, 37% 80%, 0 0);
+                --colorafter: rgba(205, 255, 250, 0.915);
+                --colorbefore: #317c60;
                } 
 
                &:focus{
-                font-size: 1.2rem;
+                font-size: 1.3rem;
                 text-decoration:underline;
                 color: #000000;
                 -webkit-text-stroke: 0.25px rgb(255, 255, 255);
@@ -151,29 +151,52 @@
     background-attachment: fixed;
     background-size: cover;
 
-
+    .title{
+        text-align: center;
+        font-family:$letra_H1;
+        h1{
+            font-size: $letra_H1_alto;
+            }
+    }
     .listaMultimedia{
         background-image:  linear-gradient(to left,$color-Gris, $color-Blanco );
         justify-items: center;
         border:2px solid rgb(80, 77, 77) ;
         position: sticky;
         top: 80px;
+        box-shadow: 0px 0px 30px black;
+        .container-fluid{
+            a{
+            justify-content: center;
+            font-family:$letra_H1;
+           }
+         }
     }
     .seccionFotos{
    @include flexible(flex, column, wrap, center, center);
    width: 100%;
    gap: 5%;
-        .title{
+        .subTitle{
             display: block;
-        }
+            text-align: center;
+            font-family:$letra_H2;
+            margin-top: 3%;
+            h2{
+                font-size: $letra_H2_alto;
+                }
+            }
         .agrupacionCard{
             @include flexible(flex, row, wrap, space-around, center);
+            gap: 5%;
           
     
         
         .cardPropia{
             box-shadow: 0px 0px 30px black;
-            margin-top: 5%;
+            margin-top: 1%;
+            .pieCard{
+                text-align: center;
+             }
             .imgCard{
         
               img{
@@ -188,16 +211,27 @@
         @include flexible(flex, column, wrap, center, center);
         width: 100%;
         gap: 5%;
-             .title{
-                 display: block;
-             }
+        .subTitle{
+            display: block;
+            text-align: center;
+            font-family:$letra_H2;
+            margin-top: 6%;
+            h2{
+                font-size: $letra_H2_alto;
+                }
+            }
              .agrupacionVideo{
                  @include flexible(flex, row, wrap, space-around, center);
              
              .cardPropia{
-             
+                box-shadow: 0px 0px 30px black;
+                margin-top: 3%;
+
+                .pieCard{
+                    text-align: center;
+                 }
                  .imgCard{
-             
+          
                    img{
                      width: 100%;
                      height: 35vh;
