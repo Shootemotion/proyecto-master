@@ -1,0 +1,47 @@
+//Importa archivos secundarios
+@import "utilidades/variables";
+@import "utilidades/mixin";
+@import "utilidades/extend";
+
+.containerMinisterio{
+    @extend %imgContenedores;
+    padding: 3%; 
+    background-image: url("../img/fondos/5137843.jpg");
+    .title{
+         @extend %letraH1;
+         color: white
+    }
+    .ministerios{
+        @include flexible(flex, row, nowrap,space-between,center);
+        gap: 1%; 
+        .ministeriosBanner{
+            @extend %contenedorBanner;
+            background-image: radial-gradient(circle at 46.73% 12.66%, $color-Crema 0, $color-Gris  25%, $color-Gris 40%, $color-Gris 70%, $color-Negro  100%);
+            .ministeriosBannerInterior{
+                background-image: url("../img/GENERAL/IMG_0285.jpg");
+            }
+        }
+        .ministeriosBanner2{
+            @extend %contenedorBanner;
+            background-image: radial-gradient(circle at 46.73% 12.66%, $color-Crema 0, $color-rosa 25%, $color-rosa 40%, $color-rosa 70%, $color-Negro  100%);
+            .ministeriosBannerInterior{
+                background-image: url("../img/GENERAL/IMG_1045.jpg");
+            }      
+        }
+        .ministeriosBanner3{
+            @extend %contenedorBanner;
+            background-image: radial-gradient(circle at 46.73% 12.66%, $color-Crema 0, $color-azul  35%, $color-azul 50%, $color-azul 70%, $color-Negro  100%);
+            .ministeriosBannerInterior{
+                background-image: url("../img/GENERAL/IMG_1295.jpg");
+            }
+        }
+        .ministeriosBanner4{
+            @extend %contenedorBanner;
+            background-image: radial-gradient(circle at 46.73% 12.66%, $color-Crema 0, $color-Naranja 25%, $color-Naranja 40%, $color-Naranja 70%, $color-Negro  100%);
+            .ministeriosBannerInterior{
+                background-image: url("../img/GENERAL/IMG_1354.jpg");
+        
+            }
+        }
+    }
+}

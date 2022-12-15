@@ -1,191 +1,274 @@
-@media  (max-width: 740px){
-    .gridHeader{
-        @include gridArea(gridHeader);
-        @include grid(3, .1rem);
 
-        .logo{
-       
-            margin: 0.5%;
-
-            img{
-                @include medidasCaja(19vh, 14vh, 0.5% 4%);
+//MQ PAGINAS PARA TABLET
+@media screen and (min-width: 320px) and (max-width: 768px){
+//HOME
+    .containerHome{
+        .seccionA{
+            @include seccion_768;
+            justify-content: center ;
+            .imgCarousel{
+               margin-top: 5%;
             }
-    
-        }
-    
-        .RedesSociales{
-            position: absolute;
-            top: 8%;
-            flex-wrap: nowrap;
-            right: 10%;
-            margin: 1%;
-            gap: 15%;
-            img{
-                @include medidasCaja(1.5rem, 1.5rem, 0.1rem);
-                filter: drop-shadow(3px 3px 8px black);
-               
-                &:hover{
-                    @include medidasCaja(2rem, 2rem, 0.2rem);
-                 }
-            }
-        }
-    
-    
-        .LogginBuscador{
-            @include gridArea(LogginBuscador);
-            @include flexible(flex, column, wrap, space-between, center);
-            margin: 2%;
-            .buscador{
-                display: none;
              }
-         
-            .Loggin{
-                @include flexible(flex, row, nowrap , space-around, center);
-                gap: 5%;
-                flex-direction: row-reverse;
-                .Loggin__icono{
-                    @include medidasCaja(3rem, 3rem, auto);
-                     }
-             
-                }
-            
-                
-            }
-        
-            
-    .BarraMenu{
-    
-        height: 60px;
-            .checkbtn{
-                font-size: 2rem;
-                display:flex;
-                color: white;
-                justify-content: center;
-                float: left;
-                margin:2%;
-                margin-left:5%;
-                cursor: pointer;
-            }
-
-          ul{
-            position: fixed;
-            display: flex;
-            width: 60vh;
-            height: 70vh;
-            flex-flow: column;
-            justify-content:initial;
-            background-image:linear-gradient(to bottom, rgb(56, 122, 115),rgb(25, 26, 27)) ;
-            top: 11rem;
-            left: -160%;
-            transition: all .5s;
-            margin-inline: 0;
-            gap: 4%;
-            align-items: center;
-          
-            li{
-
-                margin-top: 5%;
-                margin-right: 10%;
-                a{
-                    font-size: 1rem;
-                    color: #daf3ea;
-                    transition: all 0.2s;
-                    &::after{
-                        content:  "";
-                        display: block;
-                        height: 0.5em;
-                    }
-                    &::before{
-                        display: none;
-                    }
-                
-                }
-            }
-        
-          }
-    
-        
+        .seccionB{
+            @include seccion_768;
+            margin-top: 50vh;
+            margin-bottom: 5vh;
+            gap: 5%;
         }
     }
-      
-    
-    .gridMain {
-      .title{
-        h1{
-            font-size: 3rem;
+ //MULTIMEDIA
+    .containerMultimedia{
+        .listaMultimedia{
+            position: fixed;
+            width: 20%;
+            bottom:8vh; 
+            height: 50px;
+            top: unset;   
         }
-        
-      }
-    gap: 5%;
-
-
-        .seccionA{
-            margin: 0%;
-            gap: 2%;
-
-              .seccion__title{
-                margin-left: 4em;
-              }
-            .seccion__contenido{
-                @include secContenidoMQ;
-               align-items: center;
-                .imgCarousel{
-                    display: flex;
-                    justify-content: center;
-                    width: 80%;      
-                
+    }
+ //MINISTERIOS
+    .containerMinisterio{
+        .ministerios{
+            @include flexible(flex, row, wrap,space-around,center);
+            .ministeriosBanner__Mq768{
+                width: 45%;
+                margin-top: 5%;
+                height: 60vh;
+                .ministeriosBannerInterior1{
+                    p{
+                        font-size: 2vw;
+                        height: 900;
+                    }
+                 }
+                 .ministeriosBannerInterior2{
+                    li{
+                        font-size: 2vw;
+                    }
                 }
-                .seccionParrafo{
-                    min-height: 20vh;
-                    display: flex;
-                    justify-content: left;
-                    align-items: left;
-                    margin: 0%;
-                    text-align: center;
-                    font-size: 0.8rem;
-                    font-family: $letra_P;
-                    width: 80%;
              }
-
-        
-            }  
-
         }
+    }
+//FORMAR PARTE
+    .containerFormar{
 
-        .seccionB{
-            
-            .seccion__title{
-                margin-left:5vh;
-                margin-top: 44vh;
+        .formularioMapa{
+            @include flexible(flex, column, wrap, space-around, center);
+            .formulario{
+                width: 60%;
+                }
+                .mapa{
+                margin-top: 5%;
+                }
+                
+                .formarParte__datos--footer{
+                p{
+                font-size: 3vw;
+                }
             }
-
-        .contenido__video{
-            @include medidasCaja(70%,70%,0);
-
         }
-        .seccion__contenido--2{
-        
-            @include secContenidoMQ;
-            align-items: center;
+    }
 
-            .seccionParrafo--2{
-                 min-height: 20vh;
-                    display: flex;
-                    justify-content: left;
-                    align-items: left;
-                    margin-top: 15vh;
-                    text-align: center;
-                    font-size: 0.8rem;
-                    font-family: $letra_P;
-                    width: 80%;
+}
+
+
+//MQ PAGINAS PARA CELULAR
+@media screen and (max-width: 320px){
+//HOME
+.containerHome{
+    .seccionA{
+        @include seccionColumn_768;
+        justify-content: center ;
+
+        .seccion__contenido{
+            width: 80%;
+            .seccion__title{
+                h2{
+                font-size: 5vw;
+                }
+            }
+            .seccionParrafo{
+                p{
+                    font-size: 3vw;
+                }
+            }
+        }
+        .imgCarousel{
+           margin-top: 2%;
+           width: 80%;
+        }
          }
 
+    .seccionB{
+        .seccion__contenido--2{
+            width: 80%;
+            .seccion__title{
+                h2{
+                font-size: 5vw;
+                }
+             }
+            .seccionParrafo--2{
+                margin-top: 30%;
+                p{
+                 
+                    font-size: 3vw;
+                }
+            }
+        }
+        .seccionVideo{
+            margin-top: 5%;
+            height:0px;
+            width:100%;
+            max-width: 560px;
+            position: relative;
+            padding-top:56.25%;
+            iframe{
+                position:absolute;
+                height:100%;
+                width:100%;
+                top:0px;
+                left:0px;
+            }
         }
     }
-
+}
+//MULTIMEDIA
+    .containerMultimedia{
+        .listaMultimedia{
+            z-index: 2;
+            position: fixed;
+            width: 20%;
+            bottom:unset; 
+            height: 100px;
+            top: 55vh;
+            left: 0;
+            .container-fluid{
+                flex-direction: column;
+            }
+        }
+        .seccionFotos{
+            width: 90%;
+            gap: 5%;
+                .subTitle{
+                    margin-top: 3%;
+                    h2{
+                        font-size: 3.5vh;
+                        }
+                    }
+                .agrupacionCard{                    
+                    .cardPropia{
+                        box-shadow: 0px 0px 30px black;
+                        margin-top: 4%;
+                        }
+                }
+            }    
+        .seccionVideo{
+            @include seccionColumn_768;
+            width: 100%;
         
-  
-      
-
+            .subTitle{
+                margin-top: 3%;
+                h2{
+                    font-size: 3.5vh;
+                    }
+                }
+            .agrupacionVideo{
+                @include seccionColumn_768;
+                
+                .cardPropia{
+                    width:310px;
+                    margin:auto;
+                    .pieCard{
+                        p{                            
+                            font-weight: 500;  
+                            font-size: 2vh;                  
+                        }
+                    }
+                    .imgCard{
+                        margin-top: 5%;
+                        height:0px;
+                        width:100%;
+                        max-width: 310px;
+                        padding-top:56.25%;
+                        position: relative;
+                    
+                        iframe{
+                            position:absolute;
+                            height:100%;
+                            width:100%;
+                            top:0px;
+                            left:0px;
+                        }
+                    }
+                }
+            }
+        }
     }
+//MINISTERIOS
+    .containerMinisterio{
+        .ministerios{
+            @include flexible(flex, column, wrap,space-around,center);
+
+            .ministeriosBanner__Mq768{
+                width:90%;
+                margin-top: 5%;
+                height: 70vh;
+                .ministeriosBannerInterior1{
+                    p{
+                        font-size: 3vw;
+                        height: 900;
+                    }
+        
+                }
+                .ministeriosBannerInterior2{
+                    li{
+                        font-size: 3vw;
+                    }
+                }
+            }
+        }
+    }
+//RECURSOS
+.containerRecursos{      
+    .recursos{ 
+         .recursoTitle{
+             h3{
+                 font-size: 1em;
+             }
+         }
+         .recursoIcono{
+             width: 20%;
+             img{
+                 object-fit: scale-down;
+                 width: 100%;
+              }
+             }
+         .recursoDescripcion{
+             display: none;
+         }
+         .recursoPeso{
+             display: none;
+         }    
+    }
+ }
+ //FORMAR PARTE
+        .containerFormar{
+                .formularioMapa{
+                    .formulario{
+                        width: 80%;
+                    }
+                    .mapa{
+                        margin-top: 8%;
+                
+                    }
+                    
+                    .formarParte__datos--footer{
+                        p{
+                        font-size: 6vw;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+
 }

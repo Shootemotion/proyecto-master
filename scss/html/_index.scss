@@ -1,1 +1,102 @@
 
+@import "utilidades/variables";
+@import "utilidades/mixin";
+@import "utilidades/extend";
+
+
+.titleMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend %imgContenedores;
+    @extend %letraH1;
+    color: $color-Blanco;
+    font-size: 2rem;
+    background-image: url("../img/fondos/Cantando.jpg");
+    filter: grayscale(100%);
+    width:100%;
+    height: 60vh;
+}
+.containerHome{
+    
+    @extend %imgContenedores;
+    background-image: url("../img/fondos/gray-concrete-wall.jpg");
+
+    .seccionA{
+        @include medidasCaja(100%, auto,0);
+        padding: 2%;
+        @extend %seccion;
+    
+    
+        .seccion__contenido{
+            @extend %seccionContenido;
+            
+                .seccion__title{
+                    h2{
+                        @extend %letraH2;
+                    }
+                }
+                .seccionParrafo{
+                    @extend %seccionParrafo;    
+                }
+            
+                
+                
+
+        }   
+        .imgCarousel{
+            width: 35%;
+            display: flex;
+            z-index:0;
+            filter: drop-shadow(5px 5px 11px black);
+        }
+    
+    
+        
+    }
+ 
+
+    .Separador{
+        position: absolute;
+        @include flexible(flex, row, wrap, center, center);
+        left: 0;
+        @extend %imgContenedores;
+        background-image: url("../img/fondos/Reunion.jpg");
+        filter: grayscale(100%);
+        height: 50vh;
+        width: 100%;
+            h3{
+                @extend %letra_H3_Banner;
+                color: $color-Blanco;
+            }
+    }
+
+    .seccionB{
+        @include medidasCaja(100%, 60vh,2%);
+        @extend %seccion;
+        margin-top: 60vh;
+        flex-flow: row-reverse;
+
+        .seccion__contenido--2{
+            @extend %seccionContenido;
+            display: flex;
+            flex-flow: column wrap;
+            width: 50%;
+            .seccion__title{
+                margin-top: 2em;
+                h2{
+                    @extend %letraH2;
+                }
+            }
+        
+            .seccionParrafo--2{
+                @extend %seccionParrafo;
+              
+            }
+        }
+        .seccionVideo{
+        filter: drop-shadow(5px 5px 11px black);
+     }
+    }
+   
+}

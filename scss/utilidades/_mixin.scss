@@ -1,6 +1,39 @@
 //se crean para reutilizar codigo
 
 //mixin con parametros
+@mixin letrah1(){
+    font-family: $letra_H1;
+    font-size: $letra_H1_alto;
+    text-align: center;
+}
+
+@mixin letrah2(){
+    font-family: $letra_H2;
+    font-size: $letra_H2_alto;
+    text-align: center;
+}
+
+@mixin letrah3(){
+    font-family: $letra_H3;
+    font-size: $letra_H3_alto;
+    text-align: center;
+}
+
+
+
+@mixin letra_P(){
+    font-family: $letra_P;
+    font-size: $letra_P_alto;
+    text-align: center;
+}
+
+@mixin letra_P_Banner(){
+    font-family: $letra_P;
+    text-align: center;
+}
+
+
+
 
 @mixin medidasCaja ($ancho, $alto, $margen){
     width: $ancho;
@@ -14,11 +47,6 @@
     grid-template-columns: repeat($col, 1fr);
     gap: $Espacio;
     
-        @media screen and (max-width:480px) {
-            grid-template-columns: 1fr;
-            gap: 0em;
-          
-        }
 }
 
 
@@ -37,12 +65,7 @@
 
 //mixin responsive prueba
 
-@mixin mobile($medida : 480px) {
-    @media screen and (max-width:$medida) {
-        @content;
-        
-    }
-}
+
 
 @mixin bordetop ($alto, $largo , $col){
 border-top: $alto solid $col;
@@ -56,3 +79,19 @@ left: $largo;
     justify-content: space-between;
 }
 
+
+@mixin seccion_768{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+ 
+}
+
+@mixin seccionColumn_768{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+ 
+}

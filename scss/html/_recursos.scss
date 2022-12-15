@@ -1,0 +1,48 @@
+//Importa archivos secundarios
+@import "utilidades/variables";
+@import "utilidades/mixin";
+@import "utilidades/extend";
+
+.title{
+    @extend %letraH1;
+     }
+.containerRecursos{
+    @extend %imgContenedores;
+    background-image: url("../img/fondos/5291450.jpg");
+        .recursos{
+            @extend %FlexRowCentro__noWrap;
+            padding: 1%;
+            .borde {
+                @extend %FlexRowCentro__noWrap;
+                border-radius:1px;
+                border: 2px solid rgb(33, 33, 33);
+                height: 10vh;
+            }
+           
+            .recursoIcono{
+                background-color:rgb(173, 173, 173);
+                width: 10%;
+                img{
+                    object-fit: scale-down;
+                    width: 20%;
+                  
+                }
+            }
+            .recursoTitle{
+                 background-color: rgb(173, 173, 173);
+                width: 20%;
+            }
+            .recursoDescripcion{
+                 background-color:rgb(173, 173, 173);
+                width: 40%;
+            }
+            .recursoLink{
+                 background-color: rgb(173, 173, 173);
+                width: 20%;
+            }
+            .recursoPeso{
+                 background-color: rgb(173, 173, 173);
+                width: 10%;
+            }
+        }
+}

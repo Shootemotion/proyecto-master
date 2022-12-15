@@ -1,41 +1,53 @@
 
 @import "utilidades/variables";
 @import "utilidades/mixin";
-.containerFormar{
+@import "utilidades/extend";
 
-    background-image: url("../img/fondos/gray-concrete-wall.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+.containerFormar{
+@extend %imgContenedores;
+background-image: url("../img/fondos/gray-concrete-wall.jpg");
+
     .title{
-        text-align: center;
-        font-family:$letra_H1;
-        h1{
-        font-size: 4rem
-        }
+        @extend %letraH1;
     }
     .formularioMapa{
-        @include flexible(flex, row, wrap, space-around, center);
+        @include flexible(flex, row, wrap, space-around, center);   
         margin-top: 5%;
         .formulario{
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 90;
+            color: $color-Negro;
+
+            filter: drop-shadow(5px 5px 11px black);
             width: 40%;
             .subTitle{
                 margin-bottom: 5%;
                 text-align: center;
                 font-family:$letra_H2;
             }
-
         }
-    }
+
         .mapa{
+            filter: drop-shadow(5px 5px 11px black);
             .subTitle{
             margin-bottom: 5%;
             text-align: center;
             font-family:$letra_H2;
+            }
         }
     }
+
         .formarParte__datos--footer{
-            margin: 10%;
-            height: 20%;
+            @extend %FlexColumnCentro;
+            height: 50vh;
+            width: 50%;
+            p{
+            text-align: center;
+            font-size: 70px;
+            font-weight: 900;
+            line-height: 80px;
+            color: $color-Negro;
+            }     
         }
 }

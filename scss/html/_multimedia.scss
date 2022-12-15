@@ -1,183 +1,49 @@
 //Importa archivos secundarios
 @import "utilidades/variables";
 @import "utilidades/mixin";
-
-.gridHeaderM{
-    @include gridArea(gridHeader);
-    @include grid(3, .3rem);
-    background-image: url("../img/GENERAL/IMG_0511.jpg");
-    grid-template-areas: 
-    "logo RedesSociales Logging"
-    "logo RedesSociales Logging";
-
-    .logo{
-        @include gridArea(logo);
-        display: flex;
-        justify-content: center;
-        margin: 2%;
-        transition: 1s;
-        img{
-            @include medidasCaja(35vh, 30vh, 1% 8%);
-            animation-name: movimiento-img;
-            animation-iteration-count:  infinite;
-            animation-duration: 1s;
-            animation-direction: alternate;
-            }
-
-
-
-        }   
-
-    .RedesSociales{
-        @include gridArea(RedesSociales);
-        @include flexible(flex, row, wrap, center, center);
-        margin: 2%;
-        gap: 5%;
-        img{
-            @include medidasCaja(3rem, 3rem, 0.6rem);
-            filter: drop-shadow(5px 5px 11px black);
-            transition: .3s;
-            &:hover{
-                @include medidasCaja(4rem, 4rem, 0.8rem);
-            }
-        }
-    }
-
-    
-    .Logging{
-        @include gridArea(Logging);
-       display: flex;
-       flex-flow: row-reverse;
-       align-content:flex-end;
-       justify-content: flex-start;
-       align-items: center;
-        margin: 2%;
-        margin-bottom: 30%;
-        gap: 5%;
-        img{
-            @include medidasCaja(3rem, 3rem, 0.6rem);
-            filter: drop-shadow(5px 5px 11px black);
-            transition: .3s;
-            &:hover{
-                @include medidasCaja(4rem, 4rem, 0.8rem);
-            }
-        }
-    }
-
-}
-
-
-
-
-.BarraMenu2{
-    @include gridArea(BarraMenu2);
-    background-image:  linear-gradient(45deg,$color-CelesteOscuro , $color-Celeste );
-    justify-items: center;
-    border:2px solid rgb(80, 77, 77) ;
-    position: sticky;
-    top: 0;
-    height:5rem;
-        ul{
-            margin-inline: 25%;
-            gap: 3rem;
-            display: flex;   
-            justify-content: center;
-            align-items: center;
-            li{
-       
-           
-            a{
-                font-size: 1.3rem;
-                text-decoration: none;
-                color: #373434;
-                -webkit-text-stroke: 0.25px rgb(0, 0, 0);
-                transition: all 0.5s;
-                font-family: $letra_Nav;
-                /*Variables por defecto en el a*/
-                --clippyAfter: polygon(0 100%, 100% 100%, 100% 0, 63% 80%, 37% 80%, 0 50%);
-                --clippyBefore: polygon(0 0, 100% 0, 100% 50%, 68% 23%, 33% 23%, 0 100%);
-                --colorafter: #104632;
-                --colorbefore: rgba(117, 244, 206, 0.915);
-                &::after{
-                    content:  "";
-                    display: block;
-                    height: .3em;
-                    /*llamo a las variables por default*/
-                    background: var(--colorafter)  ;
-                    clip-path: var(--clippyAfter);
-                    transition: clip-path 0.3s;
-                }
-                &::before{
-                    content:  "";
-                    display: block;
-                    height: 0.3em;
-                    /*llamo a las variables por default*/
-                    background: var(--colorbefore)  ;
-                    clip-path: var(--clippyBefore);
-                    transition: clip-path 0.5s;
-            
-                }
-               &:hover{
-
-                font-size: 1.34rem;
-                color: #ffffff;
-                /*Cambio las variables en el default cuando paso el mouse por arriba*/
-                --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 70% 23%, 33% 23%, 0 23%);
-                --clippyAfter: polygon(0 100%, 100% 100%, 100% 80%, 63% 80%, 37% 80%, 0 0);
-                --colorafter: rgba(205, 255, 250, 0.915);
-                --colorbefore: #317c60;
-               } 
-
-               &:focus{
-                font-size: 1.3rem;
-                text-decoration:underline;
-                color: #000000;
-                -webkit-text-stroke: 0.25px rgb(255, 255, 255);
-                }
-            
-            }
-
-        }
-    }
-        
-}
+@import "utilidades/extend";
 
 
 
 .containerMultimedia{
     @include flexible(flex, column, wrap, space-around, center);
+    @extend %imgContenedores;
     background-image: url("../img/fondos/dirty-pattern-paint-room-block.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-
     .title{
-        text-align: center;
-        font-family:$letra_H1;
-        h1{
-            font-size: $letra_H1_alto;
-            }
+        @extend %letraH1;
     }
     .listaMultimedia{
-        background-image:  linear-gradient(to left,$color-Gris, $color-Blanco );
+        background-image:  linear-gradient(to left,$color-Negro, $color-Negro );
+        flex-flow: column;
         justify-items: center;
         border:2px solid rgb(80, 77, 77) ;
+        width: 13%;
         position: sticky;
         top: 80px;
         box-shadow: 0px 0px 30px black;
         .container-fluid{
-            a{
             justify-content: center;
-            font-family:$letra_H1;
+            align-items: center;
+            a{
+                display: flex;
+                color: $color-Blanco;
+                font-size: 1.4rem;
+                gap: 5%;
+                font-family:$letra_H1;
+              &:hover{
+                color: $color-Celeste;
+                -webkit-text-stroke: 0.1px rgb(158, 158, 158);
+                transition: all 0.4s;
+               }
            }
-         }
+           
+        }
     }
     .seccionFotos{
-   @include flexible(flex, column, wrap, center, center);
-   width: 100%;
-   gap: 5%;
+        @extend  %FlexColumnCentro;
+        width: 100%;
+        gap: 5%;
         .subTitle{
-            display: block;
             text-align: center;
             font-family:$letra_H2;
             margin-top: 3%;
@@ -191,28 +57,35 @@
           
     
         
-        .cardPropia{
-            box-shadow: 0px 0px 30px black;
-            margin-top: 1%;
-            .pieCard{
-                text-align: center;
-             }
-            .imgCard{
-        
-              img{
-                width: 100%;
-                height: 35vh;
-              }
+            .cardPropia{
+                box-shadow: 0px 0px 30px black;
+                margin-top: 1%;
+                   .pieCard{
+                    background-image: radial-gradient(circle at 46.73% 12.66%, $color-Negro 0, $color-Negro 25%, $color-Negro 40%, $color-rosa 80%, $color-rosa );
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 5vh;
+                    p{
+                        color: $color-Blanco;
+                        font-weight: 700;
+                        margin-bottom: 0;
+                    }
+                }
+                .imgCard{
+            
+                img{
+                    width: 100%;
+                    height: 35vh;
+                }
             }
         }
+        }
     }
-}
     .seccionVideo{
-        @include flexible(flex, column, wrap, center, center);
+        @extend  %FlexColumnCentro;
         width: 100%;
-        gap: 5%;
         .subTitle{
-            display: block;
             text-align: center;
             font-family:$letra_H2;
             margin-top: 6%;
@@ -221,104 +94,30 @@
                 }
             }
              .agrupacionVideo{
-                 @include flexible(flex, row, wrap, space-around, center);
-             
-             .cardPropia{
-                box-shadow: 0px 0px 30px black;
-                margin-top: 3%;
+                 @include seccion_768;
+                
+                .cardPropia{
+                    box-shadow: 0px 0px 30px black;
+                    margin-top: 3%;
 
-                .pieCard{
-                    text-align: center;
-                 }
-                 .imgCard{
-          
-                   img{
-                     width: 100%;
-                     height: 35vh;
-                   }
-                 }
-             }
-         }
-        }
-    }
-
-
-    @media  (max-width: 740px){
-
-        .gridHeaderM{
-            position: relative;
-            .logo{
-                margin: 2%;
-                img{
-                    @include medidasCaja(25vh, 20vh, 1% 8%);
+                    .pieCard{
+                        background-image: radial-gradient(circle at 46.73% 12.66%, $color-Negro 0, $color-Negro 25%, $color-Negro 40%, $color-Naranja 80%, $color-Naranja );
+                        @extend  %FlexRowCentro;
+                        height: 5vh;
+                        p{
+                            color: $color-Blanco;
+                            font-weight: 700;
+                            margin-bottom: 0;
+                        }
                     }
-                }   
-            .RedesSociales{
-                position: absolute;
-                bottom: 10%;
-                left: 100%;
-                display: flex;
-                flex-flow: row nowrap;
-                margin: 1%;
-                gap: 2.5%;
-                img{
-                    @include medidasCaja(1.5rem, 1.5rem, 0.3rem);
-                    filter: drop-shadow(3px 3px 7px black);
-                    transition: .3s;
-                    &:hover{
-                        @include medidasCaja(2rem, 2rem, 0.5rem);
+                    .imgCard{
+                        img{
+                        width: 100%;
+                        height: 35vh;
+                        }
                     }
                 }
             }
-        
-            
-            .Logging{
-                @include gridArea(Logging);
-               display: flex;
-               flex-flow: row-reverse;
-               align-content:flex-end;
-               justify-content: flex-start;
-               align-items: center;
-                margin: 2%;
-                margin-bottom: 30%;
-                gap: 5%;
-                img{
-                    @include medidasCaja(3rem, 3rem, 0.6rem);
-                    filter: drop-shadow(5px 5px 11px black);
-                    transition: .3s;
-                    &:hover{
-                        @include medidasCaja(4rem, 4rem, 0.8rem);
-                    }
-                }
-            }
-        
         }
-
-
-
-
-        .BarraMenu2{
-            height: max-content;
-            ul{
-                margin-inline: 1%;
-                gap: 2rem;
-            }
-        }
-
- 
-
-    .containerMultimedia{
-   
-        .listaMultimedia{
-            background-image:  linear-gradient(to left,$color-Gris, $color-Blanco );
-            justify-items: center;
-            border:2px solid rgb(80, 77, 77) ;
-            position: fixed;
-            top:85vh;
-            
-            height: 50px;
-            
-        }
-
     }
-}
+    

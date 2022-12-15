@@ -1,6 +1,4 @@
-
 /*reset*/
-
 *{
     margin: 0;
     padding: 0;
@@ -10,253 +8,165 @@
 //Importa archivos secundarios
 @import "utilidades/variables";
 @import "utilidades/mixin";
-@import "utilidades/mapas";
 @import "utilidades/extend";
-@import "html/index";
 @import "html/multimedia";
 @import "html/formarParte";
+@import "html/ministerios";
+@import "html/index";
+@import "html/recursos";
+@import "utilidades/mediaQ";
 
-/*Grid Container*/
 
-.containerGrid{ 
-    @include grid (4, .3rem);
-    grid-template-areas: 
-    "gridHeader gridHeader gridHeader gridHeader"
-    "gridHeader gridHeader gridHeader gridHeader"
-    "gridMain gridMain gridMain gridMain"
-    "gridMain gridMain gridMain gridMain"
-    "gridMain gridMain gridMain gridMain"
-    "gridMain gridMain gridMain gridMain"
-    "gridFooter gridFooter gridFooter gridFooter";
-}
-
+/*Grid Container de Header*/
 .gridHeader{
-    @include gridArea(gridHeader);
     @include grid(3, .3rem);
     background-image: url("../img/GENERAL/IMG_0511.jpg");
     grid-template-areas: 
-    "logo RedesSociales LogginBuscador"
-    "logo RedesSociales LogginBuscador"
-    "BarraMenu BarraMenu BarraMenu";
+    "logo RedesSociales Logging"
+    "logo RedesSociales Logging";
+
     .logo{
         @include gridArea(logo);
-        display: flex;
-        justify-content: center;
-        margin: 1%;
+        @extend %FlexRowCentro;
+        margin: 2%;
         transition: 1s;
         img{
-            @include medidasCaja(30vh, 23vh, 1% 8%);
+            @include medidasCaja(40vh, 30vh, 1% 8%);
             animation-name: movimiento-img;
             animation-iteration-count:  infinite;
             animation-duration: 1s;
             animation-direction: alternate;
-        }
-
-    }
+            }
+        }   
 
     .RedesSociales{
         @include gridArea(RedesSociales);
-        @include flexible(flex, row, wrap, center, center);
+        @extend %FlexRowCentro;
         margin: 2%;
+        gap: 5%;
         img{
             @include medidasCaja(3rem, 3rem, 0.6rem);
             filter: drop-shadow(5px 5px 11px black);
             transition: .3s;
             &:hover{
                 @include medidasCaja(4rem, 4rem, 0.8rem);
-             }
-        }
-    }
-
-
-    .LogginBuscador{
-        @include gridArea(LogginBuscador);
-        @include flexible(flex, column, wrap, space-between, center);
-        margin: 2%;
-        .Loggin{
-            @include flexible(flex, row, nowrap , space-around, center);
-            gap: 5%;
-            flex-direction: row-reverse;
-            .Loggin__icono{
-                @include medidasCaja(3rem, 3rem, auto);
             }
-         
-            
         }
     }
-    .BarraMenu{
-        @include gridArea(BarraMenu);
-        background-image:  linear-gradient(to left,$color-CelesteOscuro , $color-Celeste );
-        justify-items: center;
-        border:2px solid rgb(80, 77, 77) ;
-        position: sticky;
-        top: 0;
+    .Logging{
+        @include gridArea(Logging);
+        display: flex;
+        flex-flow: row-reverse;
+        align-content:flex-end;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 2%;
+        margin-bottom: 30%;
+        gap: 5%;
+        img{
+            @include medidasCaja(3rem, 3rem, 0.6rem);
+            filter: drop-shadow(5px 5px 11px black);
+            transition: .3s;
+            &:hover{
+                @include medidasCaja(4rem, 4rem, 0.8rem);
+            }
+        }
+    }
 
-          ul{
-            margin-top: 1%;
-            margin-inline: 5%;
-            display: flex;
-            justify-content: space-evenly;
-            list-style-type: none;
-        
-        
-             li{
-            
-                 flex-flow: row-reverse;
-        
-              
-                 a{
+}
+
+/*NAV*/
+.BarraMenu{
+    @extend %imgContenedores;
+    background-image: url("../img/fondos/12555.jpg");
+    filter: grayscale(10%);
+    border:2px solid rgb(8, 8, 8) ;
+    position: sticky;
+    top: 0;
+    height:5rem;
+    z-index:1;
+    .navbar-brand{
+        display: none;
+    }
+        ul{
+            margin-inline: 25%;
+            gap: 3rem;
+            display: flex;   
+            justify-content: center;
+            align-items: center;
+            li{           
+                a{
                     font-size: 1.3rem;
+                    font-weight: 600;
                     text-decoration: none;
-                    color: #ffffff;
-                    -webkit-text-stroke: 0.25px rgb(0, 0, 0);
-                    transition: all 0.2s;
+                    color: $color-Negro;
+                    transition: all 0.5s;
                     font-family: $letra_Nav;
                     /*Variables por defecto en el a*/
-                    --clippyAfter: polygon(0 0, 0 100%, 100% 100%, 0 0);
-                    --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 84% 43%);
-                    --colorafter: #daf3ea;
-                    --colorbefore: rgba(23, 7, 7, 0.915);
-
+                    --clippyAfter: polygon(0 100%, 100% 100%, 100% 0, 63% 80%, 37% 80%, 0 50%);
+                    --clippyBefore: polygon(0 0, 100% 0, 100% 50%, 68% 23%, 33% 23%, 0 100%);
+                    --colorafter: $color-Blanco;
+                    --colorbefore: $color-Blanco;
                     &::after{
                         content:  "";
                         display: block;
-                        height: 0.4em;
+                        height: .3em;
                         /*llamo a las variables por default*/
                         background: var(--colorafter)  ;
                         clip-path: var(--clippyAfter);
-                        transition: clip-path 0.4s;
+                        transition: clip-path 0.3s;
                     }
                     &::before{
                         content:  "";
                         display: block;
-                        height: 0.4em;
+                        height: 0.3em;
                         /*llamo a las variables por default*/
                         background: var(--colorbefore)  ;
                         clip-path: var(--clippyBefore);
-                        transition: clip-path 0.4s;
+                        transition: clip-path 0.5s;
                 
                     }
-                   &:hover{
+                &:hover{
 
-                    font-size: 1.3rem;
-                    color: #022116;
+                    font-size: 1.33rem;
+                    color: $color-Negro;
+                    -webkit-text-stroke: 0.1px rgb(158, 158, 158);
+                    transition: all 0.4s;
                     /*Cambio las variables en el default cuando paso el mouse por arriba*/
-                    --clippyBefore: polygon(0 100%, 0 0, 100% 0, 21% 50%);
-                    --clippyAfter: polygon(0 100%,100% 0,100% 100%,0 100% );
-                    --colorafter: rgba(23, 7, 7, 0.915);
-                    --colorbefore: #daf3ea;
-                   } 
+                    --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 70% 23%, 33% 23%, 0 23%);
+                    --clippyAfter: polygon(0 100%, 100% 100%, 100% 80%, 63% 80%, 37% 80%, 0 0);
+                    --colorafter: #1f0e1a;
+                    --colorbefore: #317c60;
+                } 
 
-                   &:focus{
-                    font-size: 1.2rem;
+                &:focus{
+                    font-size: 1.3rem;
                     text-decoration:underline;
                     color: #000000;
                     -webkit-text-stroke: 0.25px rgb(255, 255, 255);
                     }
                 
-                 }
-            }
-        }    
+                }
+
+        }
     }
+        
 }
 
-
-.gridMain{
-    @include gridArea(gridMain);
-    @include grid(4, 0.3rem);
-    grid-template-areas: 
-    "title title title title"
-    "seccionA seccionA seccionA seccionA"
-    "seccionB seccionB seccionB seccionB";
-    .imgCarousel{
-        @include medidasCaja(60%,60%,1%);
-        align-items: center;
-    }
-    .title{
-        @include gridArea(title);
-        display: flex;
-        justify-content: center;
-        margin-top:1vh;
-        h1{
-            font-family: $letra_H1;
-            font-size:4rem;
-        }
-    }
-    .seccionA{
-        @include gridArea(seccionA);
-        @include medidasCaja(100%, 60vh,1%);
-        @extend %seccion;
-       
-    
-        .seccion__title{
-            margin-left: 10em;
-              h2{
-
-            font-family: $letra_H2;
-        }
-        }
-        .seccion__contenido{
-            @extend %seccionContenido;
-        }
-        .seccionParrafo{
-            @extend %seccionParrafo;
-        }
-
-
-    }
-    .seccionB{
-        @include gridArea(seccionB);
-        @include medidasCaja(100%, 60vh,1%);
-        @extend %seccion;
-        @include bordetop(2px, 60%, black);
-
-        .seccion__title{
-            margin-left: 60%;
-            margin-top: 2em;
-            h2{
-                font-family: $letra_H2;
-            }
-        }
-        .seccion__contenido--2{
-            @extend %seccionContenido;
-             flex-direction: row-reverse;
-        }
-        .seccionParrafo--2{
-            @extend %seccionParrafo;
-        }
-    }
-
+.cierreMain{
+    margin-bottom: 2%
 }
-.division{
-    position: absolute;
-    margin-top: 60%
-}
+
 .gridFooter{
-
-    @include gridArea(gridFooter);
-    @include medidasCaja(100%, auto,0);
-    background-image:  linear-gradient(to right,$color-CelesteOscuro , $color-Celeste );
+    @include medidasCaja(100%, 5vh,0);
+    background-image:  linear-gradient(to right,$color-CelesteOscuro , $color-azul );
     border:2px solid rgb(80, 77, 77) ;
     text-align: center;
     position: fixed;
     bottom: 0;
-
-
 }
 
-.checkbtn{
-
-    display: none;
-}
-
-
-
-#check{
-
-    display: none;
- }
-
+//KEYFRAMES
 @keyframes movimiento-img {
     to{
         transform: scale(1); 
@@ -268,204 +178,119 @@
 }
 
 
+//MQ HEADER TABLET
 
-
-
-
-
-@media  (max-width: 740px){
-
-  
+@media screen and (min-width: 320px) and (max-width: 768px){
 
     .gridHeader{
-        @include gridArea(gridHeader);
-        @include grid(3, .1rem);
-
+        position: relative;
         .logo{
-       
-            margin: 0.5%;
-
+            margin: 2%;
             img{
-                @include medidasCaja(19vh, 14vh, 0.5% 4%);
-            }
-    
-        }
-    
+                @include medidasCaja(30vh, 25vh, 1% 8%);
+                }
+            }   
         .RedesSociales{
             position: absolute;
-            top: 8%;
-            flex-wrap: nowrap;
-            right: 10%;
-            margin: 1%;
-            gap: 15%;
-            img{
-                @include medidasCaja(1.5rem, 1.5rem, 0.1rem);
-                filter: drop-shadow(3px 3px 8px black);
-               
-                &:hover{
-                    @include medidasCaja(2rem, 2rem, 0.2rem);
-                 }
-            }
-        }
-    
-    
-        .LogginBuscador{
-            @include gridArea(LogginBuscador);
-            @include flexible(flex, column, wrap, space-between, center);
-            margin: 2%;
-            .buscador{
-                display: none;
-             }
-         
-            .Loggin{
-                @include flexible(flex, row, nowrap , space-around, center);
-                gap: 5%;
-                flex-direction: row-reverse;
-                .Loggin__icono{
-                    @include medidasCaja(3rem, 3rem, auto);
-                     }
-             
-                }
-            
-                
-            }
-        
-            
-  
-    .BarraMenu{
-    
-        height: 60px;
-            .checkbtn{
-                font-size: 2rem;
-                display:flex;
-                color: white;
-                justify-content: center;
-                float: left;
-                margin:2%;
-                margin-left:5%;
-                cursor: pointer;
-            }
-
-          ul{
-            position: fixed;
+            bottom: 10%;
+            left: 70%;
             display: flex;
-            width: 60vh;
-            height: 70vh;
-            flex-flow: column;
-            justify-content:initial;
-            background-image:linear-gradient(to bottom, rgb(56, 122, 115),rgb(25, 26, 27)) ;
-            top: 11rem;
-            left: -160%;
-            transition: all .5s;
-            margin-inline: 0;
-            gap: 4%;
-            align-items: center;
-          
-            li{
-
-                margin-top: 5%;
-                margin-right: 10%;
-                a{
-                    font-size: 1rem;
-                    color: #daf3ea;
-                    transition: all 0.2s;
-                    &::after{
-                        content:  "";
-                        display: block;
-                        height: 0.5em;
-                    }
-                    &::before{
-                        display: none;
-                    }
-                
+            flex-flow: row nowrap;
+            margin: 1%;
+            gap: 2.5%;
+            img{
+                @include medidasCaja(3rem, 3rem, 0.3rem);
+                filter: drop-shadow(3px 3px 7px black);
+                transition: .3s;
+                &:hover{
+                    @include medidasCaja(2rem, 2rem, 0.5rem);
                 }
             }
-        
-          }
+        }
     
-        }
-    }
-      
-    .gridMain {
-      .title{
-        h1{
-            font-size: 3rem;
-        }
         
-      }
-    gap: 5%;
-
-
-        .seccionA{
-            margin: 0%;
-            gap: 2%;
-
-              .seccion__title{
-                margin-left: 4em;
-              }
-            .seccion__contenido{
-                @include secContenidoMQ;
-               align-items: center;
-                .imgCarousel{
-                    display: flex;
-                    justify-content: center;
-                    width: 80%;      
-                
+        .Logging{
+            @include flexible(flex, row, row-reverse, space-around, center);
+            margin: 2%;
+            margin-bottom: 40%;
+            font-size: 1rem;
+            gap: 8%;
+            img{
+                @include medidasCaja(3rem, 3rem, 0.6rem);
+                filter: drop-shadow(5px 5px 11px black);
+                transition: .3s;
+                &:hover{
+                    @include medidasCaja(4rem, 4rem, 0.8rem);
                 }
-                .seccionParrafo{
-                    min-height: 20vh;
-                    display: flex;
-                    justify-content: left;
-                    align-items: left;
-                    margin: 0%;
-                    text-align: center;
-                    font-size: 0.8rem;
-                    font-family: $letra_P;
-                    width: 80%;
-             }
-
-        
-            }  
-
+            }
         }
+    
+    }
+    .BarraMenu{
+        height: max-content;
+        ul{
+            margin-inline: 1%;
+            gap: 2rem;
+        }
+    }
 
-        .seccionB{
-            
-            .seccion__title{
-                margin-left:5vh;
-                margin-top: 44vh;
+}
+
+
+////MQ HEADER CELULAR
+@media screen and (max-width: 320px){
+ //NAV
+    .gridHeader{
+        @include grid(2, .3rem);
+        background-image: url("../img/GENERAL/IMG_0511.jpg");
+        grid-template-areas: 
+        "logo logo"
+        "RedesSociales Logging";
+        align-content: center;
+        justify-content: center;
+        .logo{
+            img{
+                @include medidasCaja(35vh, 25vh, 1vh 3vh);
+                }
+            }   
+        .RedesSociales{
+            display: flex;
+            position: unset;
+            flex-flow: row nowrap;
+            gap: 0%;
+            img{
+                @include medidasCaja(1.5rem, 1.5rem, 0.5rem);
+                filter: drop-shadow(2px 2px 3px black);
+                transition: .3s;
+                &:hover{
+                    @include medidasCaja(2rem, 2rem, 1rem);
+                }
+            }
+        }
+        .Logging{
+            justify-content: center;
+            margin-bottom: 0;
+            a{
+                display: none;
             }
 
-        .contenido__video{
-            @include medidasCaja(70%,70%,0);
-
-        }
-        .seccion__contenido--2{
-        
-            @include secContenidoMQ;
-            align-items: center;
-
-            .seccionParrafo--2{
-                 min-height: 20vh;
-                    display: flex;
-                    justify-content: left;
-                    align-items: left;
-                    margin-top: 15vh;
-                    text-align: center;
-                    font-size: 0.8rem;
-                    font-family: $letra_P;
-                    width: 80%;
-                 }
-
+            img{
+                @include medidasCaja(2rem, 2rem, 0.6rem);
+                filter: drop-shadow(3px 3px 9px black);
+                transition: .3s;
+                &:hover{
+                    @include medidasCaja(4rem, 4rem, 0.8rem);
+                }
             }
-         }
-
+        }
+    
+    }
+    .BarraMenu{
+        height: max-content;
+        ul{
+            margin-inline: 1%;
+            gap: 0;
+          
+        }
     }
 }
-
-
-
-#check:checked ~ ul {
-    left: -5%;
-}
-
