@@ -242,7 +242,7 @@
  //NAV
     .gridHeader{
         @include grid(2, .3rem);
-        background-image: url("../img/GENERAL/IMG_0511.jpg");
+        background-image: url("../img/general/IMG_0511.jpg");
         grid-template-areas: 
         "logo logo"
         "RedesSociales Logging";
