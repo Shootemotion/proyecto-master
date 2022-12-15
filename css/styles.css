@@ -640,19 +640,19 @@
     .containerMinisterio .ministerios .ministeriosBanner {
       background-image: radial-gradient(circle at 46.73% 12.66%, #fbf6d0 0, #daf3ea 25%, #daf3ea 40%, #daf3ea 70%, #1f0e1a 100%); }
       .containerMinisterio .ministerios .ministeriosBanner .ministeriosBannerInterior {
-        background-image: url("../img/GENERAL/IMG_0285.jpg"); }
+        background-image: url("../img/general/IMG_0285.jpg"); }
     .containerMinisterio .ministerios .ministeriosBanner2 {
       background-image: radial-gradient(circle at 46.73% 12.66%, #fbf6d0 0, #f88f89 25%, #f88f89 40%, #f88f89 70%, #1f0e1a 100%); }
       .containerMinisterio .ministerios .ministeriosBanner2 .ministeriosBannerInterior {
-        background-image: url("../img/GENERAL/IMG_1045.jpg"); }
+        background-image: url("../img/general/IMG_1045.jpg"); }
     .containerMinisterio .ministerios .ministeriosBanner3 {
       background-image: radial-gradient(circle at 46.73% 12.66%, #fbf6d0 0, #2a8b8b 35%, #2a8b8b 50%, #2a8b8b 70%, #1f0e1a 100%); }
       .containerMinisterio .ministerios .ministeriosBanner3 .ministeriosBannerInterior {
-        background-image: url("../img/GENERAL/IMG_1295.jpg"); }
+        background-image: url("../img/general/IMG_1295.jpg"); }
     .containerMinisterio .ministerios .ministeriosBanner4 {
       background-image: radial-gradient(circle at 46.73% 12.66%, #fbf6d0 0, #eec276 25%, #eec276 40%, #eec276 70%, #1f0e1a 100%); }
       .containerMinisterio .ministerios .ministeriosBanner4 .ministeriosBannerInterior {
-        background-image: url("../img/GENERAL/IMG_1354.jpg"); }
+        background-image: url("../img/general/IMG_1354.jpg"); }
 
 .containerHome .seccionA, .containerHome .seccionB {
   display: flex;
