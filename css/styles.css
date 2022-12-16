@@ -260,7 +260,7 @@
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: center;
-  background-image: url("../img/fondos/dirty-pattern-paint-room-block.jpg"); }
+  background-image: url("../img/fondos/123123.jpg"); }
   .containerMultimedia .listaMultimedia {
     background-image: linear-gradient(to left, #1f0e1a, #1f0e1a);
     flex-flow: column;
@@ -301,6 +301,9 @@
       .containerMultimedia .seccionFotos .agrupacionCard .cardPropia {
         box-shadow: 0px 0px 30px black;
         margin-top: 1%; }
+        .containerMultimedia .seccionFotos .agrupacionCard .cardPropia:hover {
+          transform: scale(1.1);
+          transition: 1s; }
         .containerMultimedia .seccionFotos .agrupacionCard .cardPropia .pieCard {
           background-image: radial-gradient(circle at 46.73% 12.66%, #1f0e1a 0, #1f0e1a 25%, #1f0e1a 40%, #f88f89 80%, #f88f89);
           display: flex;

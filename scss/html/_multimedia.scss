@@ -8,7 +8,7 @@
 .containerMultimedia{
     @include flexible(flex, column, wrap, space-around, center);
     @extend %imgContenedores;
-    background-image: url("../img/fondos/dirty-pattern-paint-room-block.jpg");
+    background-image: url("../img/fondos/123123.jpg");
     .title{
         @extend %letraH1;
     }
@@ -52,6 +52,9 @@
                 }
             }
         .agrupacionCard{
+
+         
+
             @include flexible(flex, row, wrap, space-around, center);
             gap: 5%;
           
@@ -60,6 +63,10 @@
             .cardPropia{
                 box-shadow: 0px 0px 30px black;
                 margin-top: 1%;
+                &:hover{
+                    transform: scale(1.1);
+                    transition: 1s;
+                }
                    .pieCard{
                     background-image: radial-gradient(circle at 46.73% 12.66%, $color-Negro 0, $color-Negro 25%, $color-Negro 40%, $color-rosa 80%, $color-rosa );
                     display: flex;
