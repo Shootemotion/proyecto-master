@@ -20,7 +20,7 @@
 /*Grid Container de Header*/
 .gridHeader{
     @include grid(3, .3rem);
-    background-image: url("../img/GENERAL/IMG_0511.jpg");
+    background-image: url("../img/general/IMG_0511.jpg");
     grid-template-areas: 
     "logo RedesSociales Logging"
     "logo RedesSociales Logging";
