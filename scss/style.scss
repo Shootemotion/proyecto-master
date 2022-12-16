@@ -1,0 +1,296 @@
+/*reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//Importa archivos secundarios
+@import "utilidades/variables";
+@import "utilidades/mixin";
+@import "utilidades/extend";
+@import "html/multimedia";
+@import "html/formarParte";
+@import "html/ministerios";
+@import "html/index";
+@import "html/recursos";
+@import "utilidades/mediaQ";
+
+
+/*Grid Container de Header*/
+.gridHeader{
+    @include grid(3, .3rem);
+    background-image: url("../img/general/IMG_0511.jpg");
+    grid-template-areas: 
+    "logo RedesSociales Logging"
+    "logo RedesSociales Logging";
+
+    .logo{
+        @include gridArea(logo);
+        @extend %FlexRowCentro;
+        margin: 2%;
+        transition: 1s;
+        img{
+            @include medidasCaja(40vh, 30vh, 1% 8%);
+            animation-name: movimiento-img;
+            animation-iteration-count:  infinite;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            }
+        }   
+
+    .RedesSociales{
+        @include gridArea(RedesSociales);
+        @extend %FlexRowCentro;
+        margin: 2%;
+        gap: 5%;
+        img{
+            @include medidasCaja(3rem, 3rem, 0.6rem);
+            filter: drop-shadow(5px 5px 11px black);
+            transition: .3s;
+            &:hover{
+                @include medidasCaja(4rem, 4rem, 0.8rem);
+            }
+        }
+    }
+    .Logging{
+        @include gridArea(Logging);
+        display: flex;
+        flex-flow: row-reverse;
+        align-content:flex-end;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 2%;
+        margin-bottom: 30%;
+        gap: 5%;
+        img{
+            @include medidasCaja(3rem, 3rem, 0.6rem);
+            filter: drop-shadow(5px 5px 11px black);
+            transition: .3s;
+            &:hover{
+                @include medidasCaja(4rem, 4rem, 0.8rem);
+            }
+        }
+    }
+
+}
+
+/*NAV*/
+.BarraMenu{
+    @extend %imgContenedores;
+    background-image: url("../img/fondos/12555.jpg");
+    filter: grayscale(10%);
+    border:2px solid rgb(8, 8, 8) ;
+    position: sticky;
+    top: 0;
+    height:5rem;
+    z-index:1;
+    .navbar-brand{
+        display: none;
+    }
+        ul{
+            margin-inline: 25%;
+            gap: 3rem;
+            display: flex;   
+            justify-content: center;
+            align-items: center;
+            li{           
+                a{
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    text-decoration: none;
+                    color: $color-Negro;
+                    transition: all 0.5s;
+                    font-family: $letra_Nav;
+                    /*Variables por defecto en el a*/
+                    --clippyAfter: polygon(0 100%, 100% 100%, 100% 0, 63% 80%, 37% 80%, 0 50%);
+                    --clippyBefore: polygon(0 0, 100% 0, 100% 50%, 68% 23%, 33% 23%, 0 100%);
+                    --colorafter: $color-Blanco;
+                    --colorbefore: $color-Blanco;
+                    &::after{
+                        content:  "";
+                        display: block;
+                        height: .3em;
+                        /*llamo a las variables por default*/
+                        background: var(--colorafter)  ;
+                        clip-path: var(--clippyAfter);
+                        transition: clip-path 0.3s;
+                    }
+                    &::before{
+                        content:  "";
+                        display: block;
+                        height: 0.3em;
+                        /*llamo a las variables por default*/
+                        background: var(--colorbefore)  ;
+                        clip-path: var(--clippyBefore);
+                        transition: clip-path 0.5s;
+                
+                    }
+                &:hover{
+
+                    font-size: 1.33rem;
+                    color: $color-Negro;
+                    -webkit-text-stroke: 0.1px rgb(158, 158, 158);
+                    transition: all 0.4s;
+                    /*Cambio las variables en el default cuando paso el mouse por arriba*/
+                    --clippyBefore: polygon(0 0, 100% 0, 100% 100%, 70% 23%, 33% 23%, 0 23%);
+                    --clippyAfter: polygon(0 100%, 100% 100%, 100% 80%, 63% 80%, 37% 80%, 0 0);
+                    --colorafter: #1f0e1a;
+                    --colorbefore: #317c60;
+                } 
+
+                &:focus{
+                    font-size: 1.3rem;
+                    text-decoration:underline;
+                    color: #000000;
+                    -webkit-text-stroke: 0.25px rgb(255, 255, 255);
+                    }
+                
+                }
+
+        }
+    }
+        
+}
+
+.cierreMain{
+    margin-bottom: 2%
+}
+
+.gridFooter{
+    @include medidasCaja(100%, 5vh,0);
+    background-image:  linear-gradient(to right,$color-CelesteOscuro , $color-azul );
+    border:2px solid rgb(80, 77, 77) ;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+//KEYFRAMES
+@keyframes movimiento-img {
+    to{
+        transform: scale(1); 
+    }
+
+    from{
+        transform: scale(1.03);
+    }
+}
+
+
+//MQ HEADER TABLET
+
+@media screen and (min-width: 320px) and (max-width: 768px){
+
+    .gridHeader{
+        position: relative;
+        .logo{
+            margin: 2%;
+            img{
+                @include medidasCaja(30vh, 25vh, 1% 8%);
+                }
+            }   
+        .RedesSociales{
+            position: absolute;
+            bottom: 10%;
+            left: 70%;
+            display: flex;
+            flex-flow: row nowrap;
+            margin: 1%;
+            gap: 2.5%;
+            img{
+                @include medidasCaja(3rem, 3rem, 0.3rem);
+                filter: drop-shadow(3px 3px 7px black);
+                transition: .3s;
+                &:hover{
+                    @include medidasCaja(2rem, 2rem, 0.5rem);
+                }
+            }
+        }
+    
+        
+        .Logging{
+            @include flexible(flex, row, row-reverse, space-around, center);
+            margin: 2%;
+            margin-bottom: 40%;
+            font-size: 1rem;
+            gap: 8%;
+            img{
+                @include medidasCaja(3rem, 3rem, 0.6rem);
+                filter: drop-shadow(5px 5px 11px black);
+                transition: .3s;
+                &:hover{
+                    @include medidasCaja(4rem, 4rem, 0.8rem);
+                }
+            }
+        }
+    
+    }
+    .BarraMenu{
+        height: max-content;
+        ul{
+            margin-inline: 1%;
+            gap: 2rem;
+        }
+    }
+
+}
+
+
+////MQ HEADER CELULAR
+@media screen and (max-width: 320px){
+ //NAV
+    .gridHeader{
+        @include grid(2, .3rem);
+        background-image: url("../img/general/IMG_0511.jpg");
+        grid-template-areas: 
+        "logo logo"
+        "RedesSociales Logging";
+        align-content: center;
+        justify-content: center;
+        .logo{
+            img{
+                @include medidasCaja(35vh, 25vh, 1vh 3vh);
+                }
+            }   
+        .RedesSociales{
+            display: flex;
+            position: unset;
+            flex-flow: row nowrap;
+            gap: 0%;
+            img{
+                @include medidasCaja(1.5rem, 1.5rem, 0.5rem);
+                filter: drop-shadow(2px 2px 3px black);
+                transition: .3s;
+                &:hover{
+                    @include medidasCaja(2rem, 2rem, 1rem);
+                }
+            }
+        }
+        .Logging{
+            justify-content: center;
+            margin-bottom: 0;
+            a{
+                display: none;
+            }
+
+            img{
+                @include medidasCaja(2rem, 2rem, 0.6rem);
+                filter: drop-shadow(3px 3px 9px black);
+                transition: .3s;
+                &:hover{
+                    @include medidasCaja(4rem, 4rem, 0.8rem);
+                }
+            }
+        }
+    
+    }
+    .BarraMenu{
+        height: max-content;
+        ul{
+            margin-inline: 1%;
+            gap: 0;
+          
+        }
+    }
+}

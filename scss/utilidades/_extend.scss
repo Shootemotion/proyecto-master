@@ -1,0 +1,155 @@
+%seccion{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+ 
+}
+
+%imgContenedores{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+%FlexRowCentro{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+ }
+
+ %FlexRowCentro__noWrap{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+ }
+
+
+
+ %FlexColumnCentro{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+ }
+
+ 
+
+
+%seccionContenido{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 50%;
+    height: 30vh;
+    gap: 2%;
+}
+
+%letraH1{
+    h1{
+    font-family: $letra_H1 !important;
+    font-size: $letra_H1_alto;
+    text-align: center;
+    }
+}
+
+%letra_H3_Banner{
+    font-family: $letra_Banner;
+    font-size: $letra_Banner_alto;
+    font-weight: 900;
+    text-align: center;
+}
+
+%letraH2{
+    font-family: $letra_H2;
+    font-size: $letra_H2_alto;
+    text-align: center;
+    
+}
+%seccionParrafo{
+    min-height: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15%;
+    text-align: center;
+    p{
+        font-family: $letra_P;
+        font-size: $letra_P_alto;
+        font-weight: 700;
+    }
+}
+
+%contenedorBanner{
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    border: 2px solid rgb(9, 9, 9);
+    padding: 1%;
+    @include flexible(flex, column, nowrap,space-between,center);
+    gap: 0.5%;
+    width: 20%;
+    height: 75vh;
+ 
+    .ministeriosBannerInterior{
+        border: 1px solid rgb(9, 9, 9);
+        border-top-left-radius:15px;
+        border-top-right-radius:15px;
+        padding:13px;
+        width:100%;
+        height:35vh;
+        background-size: 100% 100%;
+        background-repeat:no-repeat;
+        display: flex;
+        background-size: cover;
+        justify-content: center;
+        align-items: flex-end;
+        
+        .tituloBanner{
+            width: 100%;
+            border-top-left-radius:10vw;
+            border-bottom-right-radius:10vw;
+            box-shadow: (0 0 5px rgb(145, 145, 145));;
+            height: 13%;
+            display: flex;
+            background-color: rgb(19, 19, 19);
+            justify-content: center;
+            align-items: center; 
+            h3{    
+               font-family: $letra_H3;
+               font-size: 1.2rem;
+               text-shadow: (-0.02em 0.0em 0.09em rgb(169, 168, 168));
+               color: rgb(255, 255, 255);
+            }
+        }
+    }
+       .ministeriosBannerInterior1{
+        display: flex;
+        p{
+            @include letra_P_Banner;
+            font-weight: 600;
+        }
+    }
+    .ministeriosBannerInterior2{
+        border-radius:15px;
+        border: 2px solid rgb(9, 9, 9);
+        background-image: radial-gradient(circle at 80.05% 50%, $color-Crema 0, $color-Crema 50%, $color-Crema 100%);
+        width: 100%;
+        ul{     
+            .celu{
+             list-style-type: '📱  ';
+            }
+             .eMail{
+                list-style-type: ' 📩 ';             
+            }
+            .Direccion{
+                list-style-type: ' 🏚 ';     
+            }
+            .referente{
+                list-style-type: ' 👩🏻‍🤝‍🧑🏼 ';      
+            }
+       }
+    }
+}
+ 

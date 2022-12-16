@@ -1,0 +1,97 @@
+//se crean para reutilizar codigo
+
+//mixin con parametros
+@mixin letrah1(){
+    font-family: $letra_H1;
+    font-size: $letra_H1_alto;
+    text-align: center;
+}
+
+@mixin letrah2(){
+    font-family: $letra_H2;
+    font-size: $letra_H2_alto;
+    text-align: center;
+}
+
+@mixin letrah3(){
+    font-family: $letra_H3;
+    font-size: $letra_H3_alto;
+    text-align: center;
+}
+
+
+
+@mixin letra_P(){
+    font-family: $letra_P;
+    font-size: $letra_P_alto;
+    text-align: center;
+}
+
+@mixin letra_P_Banner(){
+    font-family: $letra_P;
+    text-align: center;
+}
+
+
+
+
+@mixin medidasCaja ($ancho, $alto, $margen){
+    width: $ancho;
+    height: $alto;
+    margin: $margen;
+}
+
+
+@mixin grid  ($col, $Espacio) {
+    display: grid;
+    grid-template-columns: repeat($col, 1fr);
+    gap: $Espacio;
+    
+}
+
+
+@mixin gridArea($name){
+    grid-area: $name;
+}
+
+
+@mixin flexible ($dis, $direction, $corte, $just, $align) {
+    display: $dis;
+    flex-flow: $direction $corte;
+    justify-content:$just ;
+    align-items: $align;
+}
+
+
+//mixin responsive prueba
+
+
+
+@mixin bordetop ($alto, $largo , $col){
+border-top: $alto solid $col;
+left: $largo;
+}
+
+
+@mixin secContenidoMQ{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+
+@mixin seccion_768{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+ 
+}
+
+@mixin seccionColumn_768{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+ 
+}
